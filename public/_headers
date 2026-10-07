@@ -27,10 +27,7 @@
 /favicon.ico
   Cache-Control: public, max-age=604800, immutable
 
-/apple-touch-icon.png
-  Cache-Control: public, max-age=604800, immutable
-
-/og-image.png
+/og-image.webp
   Cache-Control: public, max-age=604800, immutable
 
 # Dynamic API routes (no caching at edge unless handled by KV)

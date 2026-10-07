@@ -40,9 +40,9 @@ let indexHtml = fs.readFileSync(indexHtmlPath, 'utf8');
 // Replace canonical, og, twitter URLs
 indexHtml = indexHtml.replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${baseUrl}/">`);
 indexHtml = indexHtml.replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${baseUrl}/">`);
-indexHtml = indexHtml.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${baseUrl}/og-image.png">`);
+indexHtml = indexHtml.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${baseUrl}/og-image.webp">`);
 indexHtml = indexHtml.replace(/<meta name="twitter:url" content="[^"]*">/, `<meta name="twitter:url" content="${baseUrl}/">`);
-indexHtml = indexHtml.replace(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${baseUrl}/og-image.png">`);
+indexHtml = indexHtml.replace(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${baseUrl}/og-image.webp">`);
 
 // Replace schema.org JSON-LD IDs and URLs
 indexHtml = indexHtml.replace(/"@id":\s*"https?:\/\/[^"#]+#webapp"/, `"@id": "${baseUrl}/#webapp"`);

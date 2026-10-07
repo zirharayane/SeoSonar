@@ -682,39 +682,54 @@ menu[role="tablist"], ul.tablist {
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0 0 0 3px;
-  border-bottom: 1px solid var(--button-shadow);
-  gap: 2px;
+  padding: 4px 6px 0 6px;
+  gap: 3px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 5;
 }
 
 menu[role="tablist"] button[role="tab"], .tab-btn {
-  background: var(--button-face);
-  border: none;
-  box-shadow: inset -1px 0 var(--button-dark-shadow),
-              inset 1px 1px var(--button-light),
-              inset -2px 0 var(--button-shadow),
-              inset 2px 2px var(--button-highlight);
-  padding: 4px 10px 3px 10px;
-  min-height: 22px;
+  background: #c0c0c0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #808080;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px 0 0 #808080;
+  padding: 3px 12px 3px 12px;
+  min-height: 23px;
   min-width: auto;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  font-size: 11px;
+  color: #222222;
+  cursor: pointer;
+  margin-top: 2px;
   margin-bottom: -1px;
   position: relative;
   z-index: 1;
+  font-family: inherit;
+}
+
+menu[role="tablist"] button[role="tab"]:hover {
+  color: #000000;
+  background: #c8c8c8;
 }
 
 menu[role="tablist"] button[role="tab"][aria-selected="true"], .tab-btn.active {
-  padding-bottom: 5px;
-  margin-top: -2px;
-  z-index: 2;
+  background: #c0c0c0;
+  color: #000000;
   font-weight: bold;
-  background: var(--button-face);
-  box-shadow: inset -1px 0 var(--button-dark-shadow),
-              inset 1px 1px var(--button-light),
-              inset -2px 0 var(--button-shadow),
-              inset 2px 2px var(--button-highlight);
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: none !important;
+  box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px 0 0 #808080;
+  margin-top: 0;
+  padding-top: 4px;
+  padding-bottom: 5px;
+  margin-bottom: -2px;
+  z-index: 10;
 }
 
 menu[role="tablist"] button[role="tab"]:focus {
@@ -725,11 +740,14 @@ menu[role="tablist"] button[role="tab"]:focus {
 .tab-panel {
   display: none;
   background: var(--button-face);
-  box-shadow: inset -1px -1px var(--button-dark-shadow),
-              inset 1px 0 var(--button-light),
-              inset -2px -2px var(--button-shadow),
-              inset 2px 0 var(--button-highlight);
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px -1px 0 #808080;
   padding: 12px;
+  position: relative;
+  z-index: 2;
 }
 
 .tab-panel.active {

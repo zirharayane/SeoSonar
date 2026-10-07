@@ -10,10 +10,9 @@
   <meta name="theme-color" content="#008080">
   <link rel="canonical" href="https://seosonar.rayane.top/">
 
-  <!-- Favicons and Touch Icons -->
+  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/assets/icon-32.webp" type="image/webp" sizes="32x32">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -24,7 +23,7 @@
   <meta property="og:image" content="https://seosonar.rayane.top/og-image.webp">
   <meta property="og:image:type" content="image/webp">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:height" content="670">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -35,10 +34,10 @@
 
   <!-- Resource Preload -->
   <link rel="preload" href="/assets/icon-256.webp" as="image" type="image/webp">
-  <link rel="preload" href="/css/win98.css?v=2.2.0" as="style">
+  <link rel="preload" href="/css/win98.css?v=2.3.0" as="style">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/win98.css?v=2.2.0">
+  <link rel="stylesheet" href="/css/win98.css?v=2.3.0">
 
   <!-- Critical Inline Styles (Guarantees zero-delay, cache-proof retro styling) -->
   <style>
@@ -149,33 +148,48 @@
       list-style: none;
       margin: 0 !important;
       padding: 4px 6px 0 6px !important;
-      gap: 2px;
-      border-bottom: 1px solid #808080;
+      gap: 3px;
+      position: relative;
+      z-index: 5;
     }
     .win-dialog-tabs button[role="tab"] {
       background: #c0c0c0;
-      border: none;
-      box-shadow: inset -1px 0 #000000,
-                  inset 1px 1px #dfdfdf,
-                  inset -2px 0 #808080,
-                  inset 2px 2px #ffffff;
-      padding: 3px 10px 2px 10px;
+      border-top: 1px solid #ffffff;
+      border-left: 1px solid #ffffff;
+      border-right: 1px solid #000000;
+      border-bottom: 1px solid #808080;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px 0 0 #808080;
+      padding: 3px 12px 3px 12px;
       font-size: 11px;
-      color: #000000;
+      color: #222222;
       cursor: pointer;
-      border-top-left-radius: 2px;
-      border-top-right-radius: 2px;
+      margin-top: 2px;
       margin-bottom: -1px;
       position: relative;
       z-index: 1;
       font-family: inherit;
     }
+    .win-dialog-tabs button[role="tab"]:hover {
+      color: #000000;
+      background: #c8c8c8;
+    }
     .win-dialog-tabs button[role="tab"].active,
     .win-dialog-tabs button[role="tab"][aria-selected="true"] {
+      background: #c0c0c0;
+      color: #000000;
       font-weight: bold;
-      padding-bottom: 4px;
-      margin-top: -2px;
-      z-index: 2;
+      border-top: 2px solid #ffffff;
+      border-left: 2px solid #ffffff;
+      border-right: 2px solid #000000;
+      border-bottom: none !important;
+      box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px 0 0 #808080;
+      margin-top: 0;
+      padding-top: 4px;
+      padding-bottom: 5px;
+      margin-bottom: -2px;
+      z-index: 10;
     }
 
     /* Compare Dual Boxes */
@@ -358,6 +372,7 @@
     <section id="scanner-section" class="window active-window" aria-labelledby="scanner-title">
       <div class="title-bar">
         <div class="title-bar-text" id="scanner-title">
+          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
           SeoSonar 98 - Site Auditor
         </div>
         <div class="title-bar-controls">
@@ -455,16 +470,10 @@
     <section id="compare-section" class="window" aria-labelledby="compare-heading">
       <div class="title-bar">
         <div class="title-bar-text" id="compare-heading">
+          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
           Compare Websites Side by Side
         </div>
       </div>
-
-      <!-- Tab-style header replacing app icon -->
-      <menu role="tablist" class="win-dialog-tabs">
-        <button role="tab" type="button" onclick="document.getElementById('scanner-section').scrollIntoView({behavior:'smooth'})">Single Audit</button>
-        <button role="tab" class="active" aria-selected="true" type="button">Compare Sites</button>
-        <button role="tab" type="button" onclick="document.getElementById('history-section').scrollIntoView({behavior:'smooth'})">Audit History</button>
-      </menu>
 
       <div class="window-body">
         <p style="margin: 0 0 12px 0; font-size: 11px; color: #333333; text-align: center;">
@@ -491,9 +500,9 @@
               <span class="compare-box-hint">e.g. Your website or client URL</span>
             </fieldset>
 
-            <!-- VS Divider Badge -->
+            <!-- & Divider Badge -->
             <div class="compare-vs-badge" aria-hidden="true">
-              <span>VS</span>
+              <span>&amp;</span>
             </div>
 
             <!-- Site B Box -->

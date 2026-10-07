@@ -35,10 +35,10 @@
 
   <!-- Resource Preload -->
   <link rel="preload" href="/assets/icon-256.webp" as="image" type="image/webp">
-  <link rel="preload" href="/css/win98.css?v=2.1.0" as="style">
+  <link rel="preload" href="/css/win98.css?v=2.2.0" as="style">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/win98.css?v=2.1.0">
+  <link rel="stylesheet" href="/css/win98.css?v=2.2.0">
 
   <!-- Critical Inline Styles (Guarantees zero-delay, cache-proof retro styling) -->
   <style>
@@ -142,6 +142,111 @@
     @media (max-width: 680px) {
       .wizard-row { flex-direction: column; }
       .wizard-arrow { transform: rotate(90deg); margin: 2px 0; }
+    }
+    /* Dialog Tabs */
+    .win-dialog-tabs {
+      display: flex;
+      list-style: none;
+      margin: 0 !important;
+      padding: 4px 6px 0 6px !important;
+      gap: 2px;
+      border-bottom: 1px solid #808080;
+    }
+    .win-dialog-tabs button[role="tab"] {
+      background: #c0c0c0;
+      border: none;
+      box-shadow: inset -1px 0 #000000,
+                  inset 1px 1px #dfdfdf,
+                  inset -2px 0 #808080,
+                  inset 2px 2px #ffffff;
+      padding: 3px 10px 2px 10px;
+      font-size: 11px;
+      color: #000000;
+      cursor: pointer;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      margin-bottom: -1px;
+      position: relative;
+      z-index: 1;
+      font-family: inherit;
+    }
+    .win-dialog-tabs button[role="tab"].active,
+    .win-dialog-tabs button[role="tab"][aria-selected="true"] {
+      font-weight: bold;
+      padding-bottom: 4px;
+      margin-top: -2px;
+      z-index: 2;
+    }
+
+    /* Compare Dual Boxes */
+    .compare-two-boxes {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+    .compare-box {
+      margin: 0;
+      padding: 12px 14px;
+      background: #ffffff !important;
+      border: 2px groove #dfdfdf !important;
+      box-shadow: inset 1px 1px 0 #808080;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+    .compare-box-legend {
+      font-weight: bold;
+      color: #000080 !important;
+      font-size: 11px;
+      padding: 1px 8px;
+      background: #c0c0c0 !important;
+      border: 1px outset #ffffff;
+      box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    }
+    .compare-box-label {
+      font-weight: bold;
+      font-size: 11px;
+      color: #000000 !important;
+      display: block;
+    }
+    .compare-box-input {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 4px 6px !important;
+      font-size: 12px !important;
+    }
+    .compare-box-hint {
+      font-size: 10px;
+      color: #555555 !important;
+      margin-top: 2px;
+    }
+    .compare-vs-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+    }
+    .compare-vs-badge span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: #000080;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 13px;
+      border: 2px outset #ffffff;
+      border-radius: 2px;
+      text-shadow: 1px 1px 0 #000000;
+    }
+    @media (max-width: 640px) {
+      .compare-two-boxes {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
     }
   </style>
 
@@ -253,7 +358,6 @@
     <section id="scanner-section" class="window active-window" aria-labelledby="scanner-title">
       <div class="title-bar">
         <div class="title-bar-text" id="scanner-title">
-          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
           SeoSonar 98 - Site Auditor
         </div>
         <div class="title-bar-controls">
@@ -269,17 +373,21 @@
         <span class="win-menu-item" role="menuitem"><u>H</u>elp</span>
       </div>
 
+      <!-- Tab-style header replacing repeated app icon -->
+      <menu role="tablist" class="win-dialog-tabs">
+        <button role="tab" class="active" aria-selected="true" type="button">Single Audit</button>
+        <button role="tab" type="button" onclick="document.getElementById('compare-section').scrollIntoView({behavior:'smooth'})">Compare Sites</button>
+        <button role="tab" type="button" onclick="document.getElementById('history-section').scrollIntoView({behavior:'smooth'})">Audit History</button>
+      </menu>
+
       <div class="window-body">
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; margin-bottom: 16px;">
-          <img src="/assets/icon-64.webp" alt="SeoSonar Brass Porthole" width="48" height="48" style="image-rendering: pixelated;">
-          <div>
-            <h2 style="margin: 0 0 4px 0; font-size: 15px; color: #000080;">
-              SeoSonar: Free Retro SEO Checker &amp; Global Website Auditor
-            </h2>
-            <p style="margin: 0 auto; max-width: 600px; color: #333333; font-size: 11px;">
-              Enter any URL below to run global probe latency tests, Desktop &amp; Mobile speed tests, and technical SEO compliance checks.
-            </p>
-          </div>
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; margin-bottom: 14px;">
+          <h2 style="margin: 0 0 4px 0; font-size: 15px; color: #000080;">
+            SeoSonar: Free Retro SEO Checker &amp; Global Website Auditor
+          </h2>
+          <p style="margin: 0 auto; max-width: 600px; color: #333333; font-size: 11px;">
+            Enter any URL below to run global probe latency tests, Desktop &amp; Mobile speed tests, and technical SEO compliance checks.
+          </p>
         </div>
 
         <form id="scanner-form" style="display: flex; flex-direction: column; gap: 8px;">
@@ -314,7 +422,6 @@
     <section id="defrag-section" class="window" style="display: none;" aria-labelledby="defrag-title">
       <div class="title-bar">
         <div class="title-bar-text" id="defrag-title">
-          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
           Defragmenting &amp; Auditing Target...
         </div>
       </div>
@@ -341,6 +448,82 @@
             <span>Needs Attention</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 2. Compare Section (Placed right under the main test box) -->
+    <section id="compare-section" class="window" aria-labelledby="compare-heading">
+      <div class="title-bar">
+        <div class="title-bar-text" id="compare-heading">
+          Compare Websites Side by Side
+        </div>
+      </div>
+
+      <!-- Tab-style header replacing app icon -->
+      <menu role="tablist" class="win-dialog-tabs">
+        <button role="tab" type="button" onclick="document.getElementById('scanner-section').scrollIntoView({behavior:'smooth'})">Single Audit</button>
+        <button role="tab" class="active" aria-selected="true" type="button">Compare Sites</button>
+        <button role="tab" type="button" onclick="document.getElementById('history-section').scrollIntoView({behavior:'smooth'})">Audit History</button>
+      </menu>
+
+      <div class="window-body">
+        <p style="margin: 0 0 12px 0; font-size: 11px; color: #333333; text-align: center;">
+          Compare two websites side by side across Core Web Vitals, payload size, and 5-continent latency.
+        </p>
+
+        <form id="compare-form" style="display: flex; flex-direction: column; gap: 12px;">
+          <!-- Two Clearly Divided Boxes for Site A and Site B -->
+          <div class="compare-two-boxes">
+            
+            <!-- Site A Box -->
+            <fieldset class="compare-box">
+              <legend class="compare-box-legend">Site A (Primary Target)</legend>
+              <label for="compare-url-a" class="compare-box-label">Website A URL:</label>
+              <input
+                type="url"
+                id="compare-url-a"
+                name="url_a"
+                required
+                placeholder="https://example.com"
+                autocomplete="url"
+                class="compare-box-input"
+              >
+              <span class="compare-box-hint">e.g. Your website or client URL</span>
+            </fieldset>
+
+            <!-- VS Divider Badge -->
+            <div class="compare-vs-badge" aria-hidden="true">
+              <span>VS</span>
+            </div>
+
+            <!-- Site B Box -->
+            <fieldset class="compare-box">
+              <legend class="compare-box-legend">Site B (Competitor Target)</legend>
+              <label for="compare-url-b" class="compare-box-label">Website B URL:</label>
+              <input
+                type="url"
+                id="compare-url-b"
+                name="url_b"
+                required
+                placeholder="https://wikipedia.org"
+                autocomplete="url"
+                class="compare-box-input"
+              >
+              <span class="compare-box-hint">e.g. Competitor or benchmark URL</span>
+            </fieldset>
+
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 4px;">
+            <button type="submit" id="btn-submit-compare" class="win-btn" style="font-weight: bold; min-width: 130px; height: 26px;">
+              Run Comparison
+            </button>
+          </div>
+        </form>
+
+        <p id="compare-status-text" style="display: none; font-weight: bold; color: #000080; margin: 10px 0 0 0; text-align: center;">
+          Executing parallel scans...
+        </p>
       </div>
     </section>
 
@@ -408,47 +591,19 @@
       </div>
     </section>
 
-    <!-- 2. Compare Section -->
-    <section id="compare-section" class="window" aria-labelledby="compare-heading">
-      <div class="title-bar">
-        <div class="title-bar-text" id="compare-heading">
-          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
-          Compare Websites Side by Side
-        </div>
-      </div>
-      <div class="window-body">
-        <form id="compare-form" style="display: flex; flex-direction: column; gap: 10px;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-            <div>
-              <label for="compare-url-a" style="font-weight: bold; display: block; margin-bottom: 4px;">Website A URL:</label>
-              <input type="url" id="compare-url-a" required placeholder="https://example.com" style="width: 100%;">
-            </div>
-            <div>
-              <label for="compare-url-b" style="font-weight: bold; display: block; margin-bottom: 4px;">Website B URL:</label>
-              <input type="url" id="compare-url-b" required placeholder="https://wikipedia.org" style="width: 100%;">
-            </div>
-          </div>
-          <div style="display: flex; justify-content: flex-end; gap: 6px;">
-            <button type="submit" id="btn-submit-compare" class="win-btn" style="font-weight: bold; min-width: 110px;">
-              Run Comparison
-            </button>
-          </div>
-        </form>
-
-        <p id="compare-status-text" style="display: none; font-weight: bold; color: #000080; margin: 10px 0 0 0;">
-          Executing parallel scans...
-        </p>
-      </div>
-    </section>
-
     <!-- 3. History Section ("My Documents") -->
     <section id="history-section" class="window" aria-labelledby="history-heading">
       <div class="title-bar">
         <div class="title-bar-text" id="history-heading">
-          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
           C:\My Documents\SEO Audits (Local History)
         </div>
       </div>
+
+      <!-- Tab-style header replacing app icon -->
+      <menu role="tablist" class="win-dialog-tabs">
+        <button role="tab" class="active" aria-selected="true" type="button">Audit History Log</button>
+      </menu>
+
       <div class="window-body">
         <div style="overflow-x: auto;">
           <table class="win-table">
@@ -478,10 +633,15 @@
     <article id="seo-guide" class="window" aria-labelledby="guide-heading">
       <div class="title-bar">
         <div class="title-bar-text" id="guide-heading">
-          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
           SeoSonar 98 Help &amp; Technical Reference Guide
         </div>
       </div>
+
+      <!-- Tab-style header replacing app icon -->
+      <menu role="tablist" class="win-dialog-tabs">
+        <button role="tab" class="active" aria-selected="true" type="button">Technical Reference &amp; FAQ</button>
+      </menu>
+
       <div class="window-body">
         <div class="guide-content">
           <h2 style="font-size: 16px; margin-top: 0;">Comprehensive Technical SEO &amp; Performance Inspection</h2>
@@ -647,7 +807,6 @@
     <div class="window modal-dialog active-window">
       <div class="title-bar">
         <div class="title-bar-text" id="results-window-title">
-          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
           Report - Website Audit Results
         </div>
         <div class="title-bar-controls">
@@ -944,7 +1103,6 @@
     <div class="window modal-dialog active-window">
       <div class="title-bar">
         <div class="title-bar-text" id="compare-results-title">
-          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
           Comparison Results - Winner Declared
         </div>
         <div class="title-bar-controls">

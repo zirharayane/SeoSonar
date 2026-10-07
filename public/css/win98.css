@@ -42,6 +42,11 @@ body {
   font-size: 11px;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 16px 16px;
 }
 
 :focus-visible {
@@ -49,14 +54,14 @@ body {
   outline-offset: 1px;
 }
 
-/* Main Container (Consistent 1000px Max-Width, Content starts directly at the top) */
+/* Main Container (PortHole 98 Parity: Centered 860px Canvas with Blueprint Grid Margins) */
 #page-container {
-  max-width: 1000px;
+  max-width: 860px;
   margin: 0 auto;
-  padding: 12px 10px 20px 10px;
+  padding: 36px 16px 80px 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 36px;
 }
 
 /* Windows 98 Window */
@@ -65,7 +70,8 @@ body {
   box-shadow: inset -1px -1px var(--button-dark-shadow),
               inset 1px 1px var(--button-light),
               inset -2px -2px var(--button-shadow),
-              inset 2px 2px var(--button-highlight);
+              inset 2px 2px var(--button-highlight),
+              2px 2px 0 rgba(0, 0, 0, 0.35);
   padding: 3px;
   color: var(--text-main);
   position: relative;
@@ -129,8 +135,393 @@ body {
   font-weight: bold;
 }
 
+.win-menu-bar {
+  display: flex;
+  gap: 16px;
+  padding: 3px 8px;
+  font-size: 11px;
+  border-bottom: 1px solid var(--button-shadow);
+  background: var(--surface);
+  font-family: var(--win-font);
+  user-select: none;
+}
+
+.win-menu-item {
+  cursor: default;
+  padding: 1px 4px;
+}
+
+.win-menu-item:hover {
+  background-color: var(--dialog-blue);
+  color: #ffffff;
+}
+
 .window-body {
   padding: 12px;
+}
+
+/* Hero Section (PortHole 98 Parity) */
+.hero-section {
+  text-align: center;
+  margin-bottom: 4px;
+  padding-top: 10px;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.45);
+  line-height: 1.15;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.5px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  color: #e2f5f5;
+  max-width: 660px;
+  margin: 0 auto 24px;
+  line-height: 1.55;
+  font-weight: 400;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.hero-cta-group .win-btn {
+  height: 40px;
+  padding: 0 22px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.hero-badge-line {
+  font-size: 12px;
+  font-weight: 600;
+  color: #d1f2f2;
+  letter-spacing: 0.4px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* 3D Bevel Utilities */
+.bevel-raised {
+  background-color: var(--surface);
+  border-top: 2px solid var(--button-light);
+  border-left: 2px solid var(--button-light);
+  border-right: 2px solid var(--button-dark-shadow);
+  border-bottom: 2px solid var(--button-dark-shadow);
+  box-shadow: inset 1px 1px 0 var(--button-highlight), inset -1px -1px 0 var(--button-shadow);
+}
+
+.bevel-sunken {
+  background-color: #ffffff;
+  border-top: 2px solid var(--button-dark-shadow);
+  border-left: 2px solid var(--button-dark-shadow);
+  border-right: 2px solid var(--button-light);
+  border-bottom: 2px solid var(--button-light);
+  box-shadow: inset 1px 1px 0 #555555, inset -1px -1px 0 var(--button-highlight);
+}
+
+.bevel-sunken-gray {
+  background-color: var(--surface);
+  border-top: 1px solid var(--button-shadow);
+  border-left: 1px solid var(--button-shadow);
+  border-right: 1px solid var(--button-light);
+  border-bottom: 1px solid var(--button-light);
+  box-shadow: inset 1px 1px 0 var(--button-dark-shadow), inset -1px -1px 0 var(--button-highlight);
+}
+
+/* Win98 Group Box Container (Etched Border Shell) */
+.group-box {
+  position: relative;
+  background-color: var(--surface);
+  border-top: 1px solid var(--button-shadow);
+  border-left: 1px solid var(--button-shadow);
+  border-right: 1px solid var(--button-light);
+  border-bottom: 1px solid var(--button-light);
+  box-shadow: inset 1px 1px 0 var(--button-light), 1px 1px 0 var(--button-shadow);
+  padding: 22px 14px 14px;
+  color: #000000;
+  font-family: var(--win-font);
+}
+
+.group-box-title {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background-color: var(--surface);
+  padding: 0 6px;
+  font-family: var(--win-font);
+  font-size: 11px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 14px;
+  user-select: none;
+}
+
+/* 3-Col Grids */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+/* Feature Panels (What it does) */
+.feature-panel {
+  background-color: var(--surface);
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feature-pill {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: var(--button-shadow);
+  padding: 2px 6px;
+  font-family: var(--win-font);
+  text-transform: uppercase;
+}
+
+.feature-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.win-icon-glyph {
+  font-size: 15px;
+  line-height: 1;
+  user-select: none;
+}
+
+.feature-title-navy {
+  font-family: var(--win-font);
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--dialog-blue);
+  line-height: 1.25;
+}
+
+.win-panel-text {
+  font-family: var(--win-font);
+  font-size: 11px;
+  color: #000000;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Wizard Flow (How It Works) */
+.wizard-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wizard-step {
+  flex: 1;
+  background-color: var(--surface);
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 98px;
+}
+
+.wizard-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-badge {
+  width: 22px;
+  height: 20px;
+  padding: 0;
+  min-width: 22px;
+  font-family: var(--win-font);
+  font-size: 11px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  flex-shrink: 0;
+  background-color: var(--surface);
+}
+
+.wizard-step-title {
+  font-family: var(--win-font);
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.wizard-arrow {
+  font-family: var(--win-font);
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--dialog-blue);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* Apps by RZ (More from Rayane Zirha) */
+#apps .grid-3 {
+  align-items: stretch;
+}
+
+.app-panel {
+  background-color: var(--surface);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 136px;
+  gap: 10px;
+}
+
+.app-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.app-icon-slot {
+  flex-shrink: 0;
+  padding-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.app-header-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.app-name {
+  font-family: var(--win-font);
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.app-badge-current {
+  font-family: var(--win-font);
+  font-size: 9px;
+  font-weight: bold;
+  color: #008000;
+  background: #ffffff;
+  border-top: 1px solid var(--button-shadow);
+  border-left: 1px solid var(--button-shadow);
+  border-right: 1px solid var(--button-light);
+  border-bottom: 1px solid var(--button-light);
+  padding: 1px 5px;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+}
+
+.app-badge-indev {
+  font-family: var(--win-font);
+  font-size: 9px;
+  font-weight: bold;
+  color: #555555;
+  padding: 1px 5px;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+}
+
+.app-actions {
+  margin-top: auto;
+}
+
+/* Teaser Mystery Effect on In-Dev Cards */
+.app-panel.teaser-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.app-panel.teaser-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.app-panel.teaser-card .app-icon-slot svg {
+  filter: grayscale(100%);
+}
+
+.app-panel.teaser-card .app-name {
+  filter: blur(2px);
+  transition: filter 0.3s ease;
+}
+
+.app-panel.teaser-card:hover .app-name {
+  filter: blur(1px);
+}
+
+.teaser-desc-wrapper {
+  position: relative;
+  margin-top: 2px;
+}
+
+.teaser-desc-wrapper .teaser-desc {
+  filter: blur(4px);
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
+.app-panel.teaser-card:hover .teaser-desc {
+  filter: blur(3px);
+}
+
+.teaser-mystery {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--win-font);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--dialog-blue);
+  letter-spacing: 2px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.app-panel.teaser-card .app-actions,
+.app-panel.teaser-card .app-badge-indev {
+  position: relative;
+  z-index: 2;
 }
 
 /* Buttons */
@@ -153,6 +544,30 @@ button, .win-btn {
   min-width: 75px;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
+}
+
+/* Primary Navy Button (PortHole 98 style) */
+.win-btn-primary {
+  background-color: var(--dialog-blue);
+  color: #ffffff !important;
+  border-top: 2px solid #5c7cfa;
+  border-left: 2px solid #5c7cfa;
+  border-right: 2px solid #000033;
+  border-bottom: 2px solid #000033;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25), inset -1px -1px 0 #000055;
+}
+
+.win-btn-primary:hover {
+  background-color: #0000a8;
+  color: #ffffff !important;
+}
+
+.win-btn-primary:active {
+  border-top: 2px solid #000033;
+  border-left: 2px solid #000033;
+  border-right: 2px solid #5c7cfa;
+  border-bottom: 2px solid #5c7cfa;
 }
 
 button:active, .win-btn:active, button.pressed, .win-btn.pressed {
@@ -551,13 +966,14 @@ table.win-table tr:hover td {
    Win98 Taskbar-Style Footer Bar (PortHole 98 Style)
    ========================================================================== */
 #site-footer {
-  max-width: 1000px;
-  margin: 8px auto 20px auto;
+  max-width: 860px;
+  margin: 16px auto 32px auto;
   background-color: var(--surface);
   box-shadow: inset -1px -1px var(--button-dark-shadow),
               inset 1px 1px var(--button-light),
               inset -2px -2px var(--button-shadow),
-              inset 2px 2px var(--button-highlight);
+              inset 2px 2px var(--button-highlight),
+              2px 2px 0 rgba(0, 0, 0, 0.35);
   padding: 3px 6px;
   display: flex;
   align-items: center;
@@ -568,6 +984,20 @@ table.win-table tr:hover td {
   color: #111111;
   user-select: none;
   position: relative;
+}
+
+.system-tray {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 6px;
+  height: 22px;
+  background: var(--surface);
+  border-top: 1px solid var(--button-shadow);
+  border-left: 1px solid var(--button-shadow);
+  border-right: 1px solid var(--button-light);
+  border-bottom: 1px solid var(--button-light);
+  box-shadow: inset 1px 1px 0 var(--button-dark-shadow);
 }
 
 .footer-left-group {

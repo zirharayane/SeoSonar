@@ -105,8 +105,27 @@
 </head>
 <body>
 
-  <!-- Main Stacked Container (Consistent 1000px Max-Width) -->
+  <!-- Main Stacked Container (PortHole 98 Parity: Centered 860px Canvas with Blueprint Grid Margins) -->
   <main id="page-container">
+
+    <!-- HERO SECTION (PortHole 98 Style - Grand Retro Intro) -->
+    <header class="hero-section">
+      <h1 class="hero-title">Your website. 5 continents.<br>One audit.</h1>
+      <p class="hero-subtitle">Audit Core Web Vitals, probe latency across 5 continents, and inspect technical SEO — in a Windows 98 suite.</p>
+
+      <div class="hero-cta-group">
+        <a href="#scan-url-input" class="win-btn win-btn-primary" onclick="document.getElementById('scan-url-input').focus()">
+          <span>⚡</span> Run Free Audit
+        </a>
+        <a href="https://github.com/zirharayane/SeoSonar" target="_blank" rel="noopener noreferrer" class="win-btn">
+          <span>💻</span> View on GitHub
+        </a>
+      </div>
+
+      <div class="hero-badge-line">
+        Windows · Free · Zero Bloat · Open Source · v1.2
+      </div>
+    </header>
 
     <!-- 1. Centered Scanner Window (Active Blue Title Bar) -->
     <section id="scanner-section" class="window active-window" aria-labelledby="scanner-title">
@@ -120,13 +139,22 @@
           <button type="button" aria-label="Close">✕</button>
         </div>
       </div>
+
+      <!-- Window Menu Bar (PortHole 98 Parity) -->
+      <div class="win-menu-bar" role="menubar">
+        <span class="win-menu-item" role="menuitem"><u>F</u>ile</span>
+        <span class="win-menu-item" role="menuitem"><u>A</u>udit</span>
+        <span class="win-menu-item" role="menuitem"><u>V</u>iew</span>
+        <span class="win-menu-item" role="menuitem"><u>H</u>elp</span>
+      </div>
+
       <div class="window-body">
         <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 12px;">
           <img src="/assets/icon-64.webp" alt="SeoSonar Brass Porthole" width="48" height="48" style="image-rendering: pixelated;">
           <div>
-            <h1 style="margin: 0 0 4px 0; font-size: 14px; color: #000080;">
+            <h2 style="margin: 0 0 4px 0; font-size: 14px; color: #000080;">
               SeoSonar: Free Retro SEO Checker &amp; Global Website Auditor
-            </h1>
+            </h2>
             <p style="margin: 0; color: #333333; font-size: 11px;">
               Enter any URL below to run global probe latency tests, Desktop &amp; Mobile speed tests, and technical SEO compliance checks.
             </p>
@@ -191,6 +219,73 @@
             <div class="legend-swatch" style="background: #ff0000;"></div>
             <span>Needs Attention</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IT DOES SECTION (PortHole 98 Parity - Raised Bevel Panels) -->
+    <section class="group-box" id="features" aria-label="What it does">
+      <div class="group-box-title">What it does</div>
+      <div class="grid-3">
+        <div class="bevel-raised feature-panel">
+          <div class="bevel-sunken-gray feature-pill">SPEED BENCHMARKS</div>
+          <div class="feature-title-row">
+            <span class="win-icon-glyph" aria-hidden="true">⚡</span>
+            <span class="feature-title-navy">Core Web Vitals &amp; Speed</span>
+          </div>
+          <p class="win-panel-text">Audits Desktop and Mobile LCP, CLS, TBT, and FCP speed metrics with side-by-side performance scoring.</p>
+        </div>
+
+        <div class="bevel-raised feature-panel">
+          <div class="bevel-sunken-gray feature-pill">GLOBAL REACHABILITY</div>
+          <div class="feature-title-row">
+            <span class="win-icon-glyph" aria-hidden="true">🌐</span>
+            <span class="feature-title-navy">5-Continent Probe Network</span>
+          </div>
+          <p class="win-panel-text">Pings your domain in real time from North America, Europe, South America, Asia-Pacific, and Africa edge nodes.</p>
+        </div>
+
+        <div class="bevel-raised feature-panel">
+          <div class="bevel-sunken-gray feature-pill">TECHNICAL CRAWL</div>
+          <div class="feature-title-row">
+            <span class="win-icon-glyph" aria-hidden="true">🔍</span>
+            <span class="feature-title-navy">On-Page SEO &amp; Security</span>
+          </div>
+          <p class="win-panel-text">Evaluates meta titles, descriptions, H1 hierarchy, robots.txt, sitemaps, JSON-LD schemas, and HTTP security headers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION (PortHole 98 Parity - Win98 Wizard Flow) -->
+    <section class="group-box" id="how-it-works" aria-label="How it works">
+      <div class="group-box-title">How it works</div>
+      <div class="wizard-row">
+        <div class="bevel-raised wizard-step">
+          <div class="wizard-header">
+            <div class="win-btn step-badge">1</div>
+            <span class="wizard-step-title">Enter Target URL</span>
+          </div>
+          <p class="win-panel-text">Enter any website address to initiate SSRF-sanitized crawl probes.</p>
+        </div>
+
+        <div class="wizard-arrow" aria-hidden="true">→</div>
+
+        <div class="bevel-raised wizard-step">
+          <div class="wizard-header">
+            <div class="win-btn step-badge">2</div>
+            <span class="wizard-step-title">Global Edge Probes</span>
+          </div>
+          <p class="win-panel-text">Concurrent probes ping the target across 5 continents while Core Web Vitals are analyzed.</p>
+        </div>
+
+        <div class="wizard-arrow" aria-hidden="true">→</div>
+
+        <div class="bevel-raised wizard-step">
+          <div class="wizard-header">
+            <div class="win-btn step-badge">3</div>
+            <span class="wizard-step-title">Get the Verdict</span>
+          </div>
+          <p class="win-panel-text">Inspect the complete tabbed diagnostic report, export JSON, or compare competitors side-by-side.</p>
         </div>
       </div>
     </section>
@@ -344,6 +439,86 @@
         </div>
       </div>
     </article>
+
+    <!-- MORE FROM RAYANE ZIRHA SECTION (PortHole 98 Parity) -->
+    <section class="group-box" id="apps" aria-label="More from Rayane Zirha">
+      <div class="group-box-title">More from Rayane Zirha</div>
+      <div class="grid-3">
+        <!-- App 1: SeoSonar 98 -->
+        <div class="bevel-raised app-panel">
+          <div class="app-info-row">
+            <div class="app-icon-slot">
+              <img src="/assets/icon-32.webp" width="22" height="22" alt="SeoSonar 98" style="image-rendering: pixelated;">
+            </div>
+            <div class="app-meta">
+              <div class="app-header-line">
+                <span class="app-name">SeoSonar 98</span>
+                <span class="app-badge-current">● CURRENT</span>
+              </div>
+              <p class="win-panel-text">Retro SEO audit utility &amp; global probe latency benchmark.</p>
+            </div>
+          </div>
+          <div class="app-actions">
+            <a href="https://github.com/zirharayane/SeoSonar" target="_blank" rel="noopener noreferrer" class="win-btn" style="width: 100%; height: 26px; font-size: 11px;">💻 View on GitHub</a>
+          </div>
+        </div>
+
+        <!-- App 2: PortHole 98 -->
+        <div class="bevel-raised app-panel">
+          <div class="app-info-row">
+            <div class="app-icon-slot">
+              <svg viewBox="0 0 16 16" width="22" height="22" aria-hidden="true">
+                <rect width="16" height="16" fill="#000080"/>
+                <rect x="2" y="2" width="12" height="9" fill="#008080"/>
+                <rect x="3" y="3" width="10" height="7" fill="#ffffff"/>
+                <rect x="5" y="5" width="2" height="2" fill="#000000"/>
+                <rect x="9" y="5" width="2" height="2" fill="#000000"/>
+                <rect x="5" y="12" width="6" height="2" fill="#c0c0c0"/>
+                <rect x="3" y="14" width="10" height="1" fill="#808080"/>
+              </svg>
+            </div>
+            <div class="app-meta">
+              <div class="app-header-line">
+                <span class="app-name">PortHole 98</span>
+                <span class="bevel-sunken-gray app-badge-indev">DESKTOP APP</span>
+              </div>
+              <p class="win-panel-text">Port reachability, CGNAT detector &amp; global latency diagnostic suite.</p>
+            </div>
+          </div>
+          <div class="app-actions">
+            <a href="https://porthole.rayane.top" target="_blank" rel="noopener noreferrer" class="win-btn" style="width: 100%; height: 26px; font-size: 11px;">🌐 porthole.rayane.top</a>
+          </div>
+        </div>
+
+        <!-- App 3: Mood Reply -->
+        <div class="bevel-raised app-panel teaser-card">
+          <div class="app-info-row">
+            <div class="app-icon-slot">
+              <svg viewBox="0 0 16 16" width="22" height="22" aria-hidden="true">
+                <rect width="16" height="16" fill="#c0c0c0"/>
+                <rect x="1" y="2" width="14" height="10" fill="#ffffff"/>
+                <rect x="2" y="1" width="12" height="1" fill="#000080"/>
+                <rect x="3" y="4" width="10" height="2" fill="#000080"/>
+                <rect x="3" y="7" width="8" height="2" fill="#808080"/>
+              </svg>
+            </div>
+            <div class="app-meta">
+              <div class="app-header-line">
+                <span class="app-name">Mood Reply</span>
+                <span class="bevel-sunken-gray app-badge-indev">IN DEV</span>
+              </div>
+              <div class="teaser-desc-wrapper">
+                <p class="win-panel-text teaser-desc">Analyze conversational tones and generate replies.</p>
+                <div class="teaser-mystery">???</div>
+              </div>
+            </div>
+          </div>
+          <div class="app-actions">
+            <button class="win-btn" disabled style="width: 100%; height: 26px; font-size: 11px;">Coming Soon</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 5. About Window (Active Blue Title Bar, Consistent Width) -->
     <section id="about-section" class="window active-window" aria-labelledby="about-heading">
@@ -756,26 +931,36 @@
 
     <div class="footer-left-group">
       <button type="button" id="footer-start-btn" class="win-btn" aria-haspopup="true" aria-expanded="false" aria-controls="start-menu">
-        <img src="/assets/icon-32.webp" width="16" height="16" alt="">
+        <svg viewBox="0 0 16 16" width="14" height="14" style="flex-shrink: 0;" aria-hidden="true">
+          <rect x="1" y="1" width="6" height="6" fill="#e73827"/>
+          <rect x="9" y="1" width="6" height="6" fill="#4fa626"/>
+          <rect x="1" y="9" width="6" height="6" fill="#2d72d9"/>
+          <rect x="9" y="9" width="6" height="6" fill="#f8b600"/>
+        </svg>
         <span>Start</span>
       </button>
 
       <div class="footer-task-item" aria-current="page">
-        <img src="/assets/icon-32.webp" width="14" height="14" alt="">
+        <img src="/assets/icon-32.webp" width="14" height="14" alt="" style="image-rendering: pixelated;">
         <span>SeoSonar 98</span>
       </div>
 
-      <span class="footer-branding">Made by Rayane Zirha · RZ™ Creative</span>
+      <span class="footer-branding">Made by <strong>Rayane Zirha</strong> · <strong>RZ™</strong></span>
     </div>
 
     <div class="footer-right-group">
       <div class="footer-links">
         <a href="https://rayane.top" class="footer-link" target="_blank" rel="noopener">rayane.top</a>
         <span aria-hidden="true" style="color: #666;">·</span>
-        <a href="https://github.com/r4yn" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://porthole.rayane.top" class="footer-link" target="_blank" rel="noopener">PortHole 98</a>
+        <span aria-hidden="true" style="color: #666;">·</span>
+        <a href="https://github.com/zirharayane/SeoSonar" class="footer-link" target="_blank" rel="noopener">GitHub</a>
       </div>
 
-      <span id="footer-clock" class="footer-clock-box" aria-label="Current time">12:00 PM</span>
+      <div class="system-tray">
+        <span title="Network Active" style="font-size: 11px;" aria-hidden="true">🖧</span>
+        <span id="footer-clock" class="footer-clock-box" style="box-shadow: none; padding: 0; background: transparent;" aria-label="Current time">12:00 PM</span>
+      </div>
     </div>
   </footer>
 

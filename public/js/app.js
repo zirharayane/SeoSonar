@@ -226,7 +226,7 @@ export function stopDefragAnimation() {
 
 export async function loadResultsEngine() {
   if (!resultsEngine) {
-    resultsEngine = await import('./results.js');
+    resultsEngine = await import('./results.js?v=2.3.1');
   }
   return resultsEngine;
 }

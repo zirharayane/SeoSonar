@@ -15,35 +15,36 @@ export function hasLastReport() {
  * Accessible Tab Navigation with Left/Right Arrow Key Support
  */
 export function initTabs() {
-  const tablist = document.querySelector('menu[role="tablist"]');
-  if (!tablist) return;
+  const tablists = document.querySelectorAll('menu[role="tablist"]');
+  tablists.forEach((tablist) => {
+    const tabs = Array.from(tablist.querySelectorAll('button[role="tab"][aria-controls]'));
+    if (tabs.length === 0) return;
 
-  const tabs = Array.from(tablist.querySelectorAll('button[role="tab"]'));
+    tabs.forEach((tabBtn, index) => {
+      // Click selection
+      tabBtn.onclick = () => activateTab(tabBtn, tabs);
 
-  tabs.forEach((tabBtn, index) => {
-    // Click selection
-    tabBtn.onclick = () => activateTab(tabBtn, tabs);
+      // Keyboard Arrow navigation (W3C ARIA Tab Pattern)
+      tabBtn.onkeydown = (e) => {
+        let nextIndex = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          nextIndex = (index + 1) % tabs.length;
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          nextIndex = (index - 1 + tabs.length) % tabs.length;
+        } else if (e.key === 'Home') {
+          nextIndex = 0;
+        } else if (e.key === 'End') {
+          nextIndex = tabs.length - 1;
+        }
 
-    // Keyboard Arrow navigation (W3C ARIA Tab Pattern)
-    tabBtn.onkeydown = (e) => {
-      let nextIndex = null;
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        nextIndex = (index + 1) % tabs.length;
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        nextIndex = (index - 1 + tabs.length) % tabs.length;
-      } else if (e.key === 'Home') {
-        nextIndex = 0;
-      } else if (e.key === 'End') {
-        nextIndex = tabs.length - 1;
-      }
-
-      if (nextIndex !== null) {
-        e.preventDefault();
-        const targetTab = tabs[nextIndex];
-        activateTab(targetTab, tabs);
-        targetTab.focus();
-      }
-    };
+        if (nextIndex !== null) {
+          e.preventDefault();
+          const targetTab = tabs[nextIndex];
+          activateTab(targetTab, tabs);
+          targetTab.focus();
+        }
+      };
+    });
   });
 }
 
@@ -109,7 +110,10 @@ export function renderReport(data) {
   // Reset to first tab (Overview)
   const firstTab = document.getElementById('tab-btn-overview');
   if (firstTab) {
-    const tabs = Array.from(document.querySelectorAll('menu[role="tablist"] button[role="tab"]'));
+    const modalTablist = firstTab.closest('menu[role="tablist"]');
+    const tabs = modalTablist
+      ? Array.from(modalTablist.querySelectorAll('button[role="tab"][aria-controls]'))
+      : [firstTab];
     activateTab(firstTab, tabs);
   }
 }

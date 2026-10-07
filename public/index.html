@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SeoSonar - Free Retro SEO Checker & Global Website Auditor</title>
+  <meta name="description" content="Free retro Windows 98-styled website auditor. Analyze Core Web Vitals, global probe latency across 5 continents, on-page SEO tags, and security headers.">
+  <meta name="author" content="Rayane Zirha">
+  <meta name="theme-color" content="#008080">
+  <link rel="canonical" href="https://seosonar.rayane.top/">
+
+  <!-- Favicons and Touch Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/assets/icon-32.webp" type="image/webp" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seosonar.rayane.top/">
+  <meta property="og:title" content="SeoSonar - Free Retro SEO Checker & Global Website Auditor">
+  <meta property="og:description" content="Free retro Windows 98-styled website auditor. Ping websites across 5 continents, check Core Web Vitals, on-page SEO, and security headers.">
+  <meta property="og:image" content="https://seosonar.rayane.top/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://seosonar.rayane.top/">
+  <meta name="twitter:title" content="SeoSonar - Free Retro SEO Checker & Global Website Auditor">
+  <meta name="twitter:description" content="Free retro Windows 98-styled website auditor. Ping websites across 5 continents, check Core Web Vitals, on-page SEO, and security headers.">
+  <meta name="twitter:image" content="https://seosonar.rayane.top/og-image.png">
+
+  <!-- Resource Preload -->
+  <link rel="preload" href="/assets/icon-256.webp" as="image" type="image/webp">
+  <link rel="preload" href="/css/win98.css" as="style">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/win98.css">
+
+  <!-- Structured Data: WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://seosonar.rayane.top/#webapp",
+        "name": "SeoSonar 98",
+        "url": "https://seosonar.rayane.top/",
+        "description": "Free retro Windows 98-styled SEO checker, pinged from around the world. Audits Core Web Vitals, global probe response latency, and technical crawl parameters.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works on all modern web browsers.",
+        "author": {
+          "@type": "Person",
+          "name": "Rayane Zirha",
+          "url": "https://seosonar.rayane.top/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "RZ™ Creative"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://seosonar.rayane.top/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is SeoSonar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SeoSonar is a free, retro Windows 98-styled website auditor that conducts comprehensive on-page SEO audits, speed tests, Core Web Vitals lab data, HTTP security header evaluations, and global HTTP response latency tests across 5 continents."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the SeoSonar System Rating calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The System Rating is calculated on a 0-100 scale using a transparent formula: Performance (35% average of desktop and mobile), SEO (35%), Accessibility (15%), and Best Practices (15%), minus a penalty if remote probes in the United States, Germany, Brazil, Japan, or Morocco encounter slow response times or unreachable status codes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are international probe tests conducted?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Probe latency tests are executed in real time via a distributed edge probe network across nodes located in North America, Europe, South America, Asia-Pacific, and Africa."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Application scripts -->
+  <script type="module" src="/js/app.js"></script>
+</head>
+<body>
+
+  <!-- Main Stacked Container (Consistent 1000px Max-Width) -->
+  <main id="page-container">
+
+    <!-- 1. Centered Scanner Window (Active Blue Title Bar) -->
+    <section id="scanner-section" class="window active-window" aria-labelledby="scanner-title">
+      <div class="title-bar">
+        <div class="title-bar-text" id="scanner-title">
+          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
+          SeoSonar 98 - Site Auditor
+        </div>
+        <div class="title-bar-controls">
+          <button type="button" aria-label="Minimize">_</button>
+          <button type="button" aria-label="Close">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 12px;">
+          <img src="/assets/icon-64.webp" alt="SeoSonar Brass Porthole" width="48" height="48" style="image-rendering: pixelated;">
+          <div>
+            <h1 style="margin: 0 0 4px 0; font-size: 14px; color: #000080;">
+              SeoSonar: Free Retro SEO Checker &amp; Global Website Auditor
+            </h1>
+            <p style="margin: 0; color: #333333; font-size: 11px;">
+              Enter any URL below to run global probe latency tests, Desktop &amp; Mobile speed tests, and technical SEO compliance checks.
+            </p>
+          </div>
+        </div>
+
+        <form id="scanner-form" style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <label for="scan-url-input" style="font-weight: bold; min-width: 32px;">URL:</label>
+            <input
+              type="url"
+              id="scan-url-input"
+              name="url"
+              placeholder="https://example.com"
+              required
+              autocomplete="url"
+              style="flex: 1; min-width: 220px;"
+            >
+            <button type="submit" id="btn-submit-scan" class="win-btn" style="font-weight: bold; min-width: 90px;">
+              Scan Now
+            </button>
+            <button type="reset" class="win-btn">
+              Clear
+            </button>
+          </div>
+          <div id="reopen-container" style="display: none; margin-top: 4px;">
+            <button type="button" id="btn-reopen-scan" class="win-btn" style="min-width: auto; padding: 2px 8px; font-weight: bold;">
+              📑 Reopen Last Report
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Defragmenter Progress Window (Shown while scanning) -->
+    <section id="defrag-section" class="window" style="display: none;" aria-labelledby="defrag-title">
+      <div class="title-bar">
+        <div class="title-bar-text" id="defrag-title">
+          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
+          Defragmenting &amp; Auditing Target...
+        </div>
+      </div>
+      <div class="window-body">
+        <p id="defrag-status-text" style="font-weight: bold; margin: 0 0 8px 0; min-height: 18px;">
+          Connecting to distributed probe network (US, DE, BR, JP, MA)...
+        </p>
+        <div id="defrag-grid" class="defrag-grid" aria-hidden="true"></div>
+        <div class="defrag-legend">
+          <div class="defrag-legend-item">
+            <div class="legend-swatch" style="background: #ffffff;"></div>
+            <span>Unallocated</span>
+          </div>
+          <div class="defrag-legend-item">
+            <div class="legend-swatch" style="background: #000080;"></div>
+            <span>Reading Data</span>
+          </div>
+          <div class="defrag-legend-item">
+            <div class="legend-swatch" style="background: #008000;"></div>
+            <span>Optimized</span>
+          </div>
+          <div class="defrag-legend-item">
+            <div class="legend-swatch" style="background: #ff0000;"></div>
+            <span>Needs Attention</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Compare Section -->
+    <section id="compare-section" class="window" aria-labelledby="compare-heading">
+      <div class="title-bar">
+        <div class="title-bar-text" id="compare-heading">
+          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
+          Compare Websites Side by Side
+        </div>
+      </div>
+      <div class="window-body">
+        <form id="compare-form" style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div>
+              <label for="compare-url-a" style="font-weight: bold; display: block; margin-bottom: 4px;">Website A URL:</label>
+              <input type="url" id="compare-url-a" required placeholder="https://example.com" style="width: 100%;">
+            </div>
+            <div>
+              <label for="compare-url-b" style="font-weight: bold; display: block; margin-bottom: 4px;">Website B URL:</label>
+              <input type="url" id="compare-url-b" required placeholder="https://wikipedia.org" style="width: 100%;">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 6px;">
+            <button type="submit" id="btn-submit-compare" class="win-btn" style="font-weight: bold; min-width: 110px;">
+              Run Comparison
+            </button>
+          </div>
+        </form>
+
+        <p id="compare-status-text" style="display: none; font-weight: bold; color: #000080; margin: 10px 0 0 0;">
+          Executing parallel scans...
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. History Section ("My Documents") -->
+    <section id="history-section" class="window" aria-labelledby="history-heading">
+      <div class="title-bar">
+        <div class="title-bar-text" id="history-heading">
+          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
+          C:\My Documents\SEO Audits (Local History)
+        </div>
+      </div>
+      <div class="window-body">
+        <div style="overflow-x: auto;">
+          <table class="win-table">
+            <thead>
+              <tr>
+                <th>Target Domain</th>
+                <th>Date Scanned</th>
+                <th>System Rating</th>
+                <th>Desktop Perf</th>
+                <th>Mobile Perf</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="history-table-body">
+              <tr><td colspan="6">No previous scan records located in local storage.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
+          <button type="button" id="btn-clear-history" class="win-btn">Clear History</button>
+          <span style="color: #444; font-size: 10px;">Stored locally in your browser (100% private)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Real Crawlable Help & Technical Reference Guide -->
+    <article id="seo-guide" class="window" aria-labelledby="guide-heading">
+      <div class="title-bar">
+        <div class="title-bar-text" id="guide-heading">
+          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
+          SeoSonar 98 Help &amp; Technical Reference Guide
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="guide-content">
+          <h2 style="font-size: 16px; margin-top: 0;">Comprehensive Technical SEO &amp; Performance Inspection</h2>
+          <p>
+            <strong>SeoSonar 98</strong> is an ultra-fast, authentic Windows 98-styled website audit utility designed for technical SEOs, webmasters, and software engineers. Built with vanilla web standards and executing on modern edge functions, SeoSonar inspects critical search ranking factors without loading client-side dependencies.
+          </p>
+
+          <h2>What SeoSonar Inspects</h2>
+          <ul>
+            <li><strong>Desktop &amp; Mobile Core Web Vitals:</strong> Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), Total Blocking Time (TBT), and First Contentful Paint (FCP) evaluated via speed tests and lab data.</li>
+            <li><strong>Global Probe Latency:</strong> Distributed real-time HTTP probes across 5 major continental regions (North America, Europe, South America, Asia-Pacific, Africa) via a distributed edge probe network.</li>
+            <li><strong>On-Page Technical SEO:</strong> Quantitative audits of title length (30-60 chars), meta description length (120-160 chars), exactly one H1 heading structure, canonical link tag validity, mobile viewport configuration, missing image alt attributes, and HTML lang attributes.</li>
+            <li><strong>Crawl &amp; Indexation Directives:</strong> Availability of root <code>robots.txt</code>, XML sitemap discovery, HTTPS enforcement, and redirect chain count.</li>
+            <li><strong>HTTP Security Headers:</strong> Strict-Transport-Security (HSTS), Content-Security-Policy (CSP), X-Content-Type-Options, X-Frame-Options, and compression encoding.</li>
+            <li><strong>Structured Data:</strong> Detection and extraction of embedded JSON-LD schemas (Organization, WebSite, Article, Product, FAQPage).</li>
+          </ul>
+
+          <h2>How the Win98 System Rating is Calculated</h2>
+          <p>
+            The System Rating (0 to 100) provides a balanced benchmark configured via a single transparent formula:
+          </p>
+          <table class="win-table" style="max-width: 520px; margin: 10px 0;">
+            <thead>
+              <tr>
+                <th>Audit Dimension</th>
+                <th>Formula Weight</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Performance (Average of Desktop and Mobile)</td>
+                <td><strong>35%</strong></td>
+              </tr>
+              <tr>
+                <td>On-Page Technical SEO</td>
+                <td><strong>35%</strong></td>
+              </tr>
+              <tr>
+                <td>Accessibility Compliance</td>
+                <td><strong>15%</strong></td>
+              </tr>
+              <tr>
+                <td>Web Best Practices</td>
+                <td><strong>15%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            A penalty (up to 15 points) is deducted if remote probe servers in the United States, Germany, Brazil, Japan, or Morocco encounter latency higher than 1500 ms or return non-200 HTTP statuses.
+          </p>
+
+          <h2>Frequently Asked Questions</h2>
+          <section class="faq-item">
+            <h3 class="faq-question">Why are Desktop results rendered alongside Mobile results?</h3>
+            <p>
+              Desktop (PC) browsing accounts for substantial B2B, enterprise, and e-commerce traffic. Inspecting both viewports reveals whether optimization efforts have inadvertently harmed desktop rendering while tuning for mobile viewports.
+            </p>
+          </section>
+
+          <section class="faq-item">
+            <h3 class="faq-question">What does "Estimated (lab data unavailable)" indicate?</h3>
+            <p>
+              When a scan runs without speed test lab data, SeoSonar employs its native edge analysis engine based on server TTFB, DOM size, and asset analysis. This is transparently tagged so you always know whether data originates from speed tests or our native edge heuristic.
+            </p>
+          </section>
+
+          <section class="faq-item">
+            <h3 class="faq-question">How does Server-Side Request Forgery (SSRF) protection work?</h3>
+            <p>
+              Before issuing requests, SeoSonar resolves hostnames via DNS-over-HTTPS and verifies that target addresses are not in private (RFC 1918), loopback, link-local, or cloud metadata ranges.
+            </p>
+          </section>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. About Window (Active Blue Title Bar, Consistent Width) -->
+    <section id="about-section" class="window active-window" aria-labelledby="about-heading">
+      <div class="title-bar">
+        <div class="title-bar-text" id="about-heading">
+          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
+          About SeoSonar 98
+        </div>
+        <div class="title-bar-controls">
+          <button type="button" aria-label="Minimize">_</button>
+          <button type="button" aria-label="Close">✕</button>
+        </div>
+      </div>
+      <div class="window-body" style="text-align: center;">
+        <img src="/assets/icon-256.webp" alt="SeoSonar Brass Porthole Icon" width="80" height="80" style="image-rendering: pixelated; margin: 6px 0;">
+        <h2 style="font-size: 15px; margin: 4px 0 2px 0; color: #000080;">SeoSonar 98</h2>
+        <p style="margin: 0 0 10px 0; font-size: 11px; color: #222;">Free retro SEO checker, pinged from around the world</p>
+        <div class="sunken-panel gray" style="text-align: left; max-width: 440px; margin: 0 auto 12px auto; font-size: 11px;">
+          <p style="margin: 4px 0;"><strong>Product:</strong> SeoSonar 98</p>
+          <p style="margin: 4px 0;"><strong>Author:</strong> Rayane Zirha</p>
+          <p style="margin: 4px 0;"><strong>Trademark:</strong> RZ™ Creative</p>
+          <p style="margin: 4px 0;"><strong>Build:</strong> 1.2</p>
+        </div>
+        <p style="font-size: 11px; color: #333; margin: 0;">Made by <strong>Rayane Zirha</strong> · RZ™ Creative</p>
+      </div>
+    </section>
+
+  </main> <!-- /#page-container -->
+
+  <!-- =========================================================================
+       MODAL 1: Tabbed Report Popup Window (Accessible Win98 Dialog)
+       ========================================================================= -->
+  <div id="modal-report" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="results-window-title">
+    <div class="window modal-dialog active-window">
+      <div class="title-bar">
+        <div class="title-bar-text" id="results-window-title">
+          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
+          Report - Website Audit Results
+        </div>
+        <div class="title-bar-controls">
+          <button type="button" data-action="close-report" aria-label="Close">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+
+        <!-- Navigation Tabs -->
+        <menu role="tablist">
+          <button role="tab" id="tab-btn-overview" aria-selected="true" aria-controls="tab-overview" class="active">Overview</button>
+          <button role="tab" id="tab-btn-speed" aria-selected="false" aria-controls="tab-speed">Speed &amp; CWV</button>
+          <button role="tab" id="tab-btn-probes" aria-selected="false" aria-controls="tab-probes">Global Probes</button>
+          <button role="tab" id="tab-btn-onpage" aria-selected="false" aria-controls="tab-onpage">On-Page SEO</button>
+          <button role="tab" id="tab-btn-headers" aria-selected="false" aria-controls="tab-headers">Headers &amp; Crawl</button>
+          <button role="tab" id="tab-btn-export" aria-selected="false" aria-controls="tab-export">Export</button>
+        </menu>
+
+        <!-- TAB 1: OVERVIEW -->
+        <div id="tab-overview" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-overview">
+          <div id="estimated-data-banner" class="estimated-banner" style="display: none;"></div>
+
+          <fieldset>
+            <legend>System Rating (0-100)</legend>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; flex-wrap: wrap; gap: 8px;">
+              <span id="rating-summary-desc"><strong>Rating: Evaluating...</strong></span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div id="overview-desktop-mobile-scores" style="font-size: 11px;"></div>
+                <span id="rating-score-display" style="font-size: 16px; font-weight: bold; font-family: monospace;">-- / 100</span>
+              </div>
+            </div>
+            <div class="progress-container">
+              <div id="rating-progress-bar" class="progress-bar-segmented" style="width: 0%;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 10px; flex-wrap: wrap; gap: 6px;">
+              <span>Performance (35% avg): <strong id="score-perf" class="metric-rating">--</strong></span>
+              <span>SEO (35%): <strong id="score-seo" class="metric-rating">--</strong></span>
+              <span>Accessibility (15%): <strong id="score-a11y" class="metric-rating">--</strong></span>
+              <span>Best Practices (15%): <strong id="score-best" class="metric-rating">--</strong></span>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Fix This First (Top 5 Priority Issues)</legend>
+            <ul id="fix-this-first-list" class="fix-list">
+              <li class="fix-item">Loading priority diagnostic recommendations...</li>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>Connection &amp; Network Metrics</legend>
+            <table class="win-table">
+              <tbody>
+                <tr>
+                  <td><strong>Resolved Target URL:</strong></td>
+                  <td id="net-final-url">--</td>
+                </tr>
+                <tr>
+                  <td><strong>Time to First Byte (TTFB):</strong></td>
+                  <td id="net-ttfb">--</td>
+                </tr>
+                <tr>
+                  <td><strong>Redirect Chain:</strong></td>
+                  <td id="net-redirects">--</td>
+                </tr>
+                <tr>
+                  <td><strong>Uncompressed HTML Payload:</strong></td>
+                  <td id="net-size">--</td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+        </div>
+
+        <!-- TAB 2: SPEED & CORE WEB VITALS (Desktop Viewport first, then Mobile Viewport) -->
+        <div id="tab-speed" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-speed">
+          <p id="speed-provider-note" style="margin: 0 0 10px 0; color: #333333; font-size: 10px;">
+            Audited using speed tests and lab data (Desktop PC first, Mobile second).
+          </p>
+
+          <table class="win-table">
+            <thead>
+              <tr>
+                <th style="width: 40%;">Lab Metric</th>
+                <th style="width: 30%;">Desktop Viewport (PC)</th>
+                <th style="width: 30%;">Mobile Viewport</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Performance Score (0-100)</strong></td>
+                <td><span id="desktop-perf-score" class="metric-rating">--</span></td>
+                <td><span id="mobile-perf-score" class="metric-rating">--</span></td>
+              </tr>
+              <tr>
+                <td><strong>LCP (Largest Contentful Paint)</strong></td>
+                <td id="cwv-d-lcp">--</td>
+                <td id="cwv-m-lcp">--</td>
+              </tr>
+              <tr>
+                <td><strong>CLS (Cumulative Layout Shift)</strong></td>
+                <td id="cwv-d-cls">--</td>
+                <td id="cwv-m-cls">--</td>
+              </tr>
+              <tr>
+                <td><strong>TBT (Total Blocking Time)</strong></td>
+                <td id="cwv-d-tbt">--</td>
+                <td id="cwv-m-tbt">--</td>
+              </tr>
+              <tr>
+                <td><strong>FCP (First Contentful Paint)</strong></td>
+                <td id="cwv-d-fcp">--</td>
+                <td id="cwv-m-fcp">--</td>
+              </tr>
+              <tr>
+                <td><strong>SI (Speed Index)</strong></td>
+                <td id="cwv-d-si">--</td>
+                <td id="cwv-m-si">--</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Real-User Field Data -->
+          <fieldset style="margin-top: 14px; padding: 8px 10px; border: 2px groove #dfdfdf;">
+            <legend style="font-weight: bold; font-size: 11px; color: #000080;">Real-user data</legend>
+            <div id="crux-field-container">
+              <p id="crux-field-status" style="margin: 0; font-size: 11px; color: #333333;">
+                <em>Not enough real-user data for this site</em>
+              </p>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- TAB 3: GLOBAL PROBES -->
+        <div id="tab-probes" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-probes">
+          <p style="margin: 0 0 8px 0; font-size: 10px; color: #333333;">
+            <strong>Notice:</strong> Results measured from distributed probe servers across the globe, not real user field data.
+          </p>
+          <table class="win-table">
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Region</th>
+                <th>Probe Server</th>
+                <th>Latency</th>
+                <th>HTTP Status</th>
+                <th>Speed Grade</th>
+              </tr>
+            </thead>
+            <tbody id="probes-table-body">
+              <tr><td colspan="6">Loading probe response benchmarks...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- TAB 4: ON-PAGE SEO -->
+        <div id="tab-onpage" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-onpage">
+          <table class="win-table">
+            <tbody>
+              <tr>
+                <td style="width: 140px;"><strong>Title Tag:</strong></td>
+                <td id="seo-title-text">--</td>
+                <td id="seo-title-len" style="width: 160px;">--</td>
+                <td id="seo-title-status" style="width: 90px;">--</td>
+              </tr>
+              <tr>
+                <td><strong>Meta Description:</strong></td>
+                <td id="seo-desc-text">--</td>
+                <td id="seo-desc-len">--</td>
+                <td id="seo-desc-status">--</td>
+              </tr>
+              <tr>
+                <td><strong>H1 Headings:</strong></td>
+                <td id="seo-h1-count">--</td>
+                <td colspan="2"><span id="seo-h1-status">--</span></td>
+              </tr>
+              <tr>
+                <td><strong>Canonical URL:</strong></td>
+                <td id="seo-canonical" colspan="3">--</td>
+              </tr>
+              <tr>
+                <td><strong>Mobile Viewport:</strong></td>
+                <td id="seo-viewport" colspan="3">--</td>
+              </tr>
+              <tr>
+                <td><strong>Language Attribute:</strong></td>
+                <td id="seo-lang" colspan="3">--</td>
+              </tr>
+              <tr>
+                <td><strong>Image Alt Attributes:</strong></td>
+                <td colspan="3">
+                  Total Images: <strong id="seo-img-total">--</strong> |
+                  Missing Alt Tags: <strong id="seo-img-missing" style="color: #c00000;">--</strong>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Structured Data (JSON-LD):</strong></td>
+                <td colspan="3">
+                  <span id="seo-schema-count">--</span>: <strong id="seo-schema-types">--</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <fieldset style="margin-top: 10px;">
+            <legend>H1 Heading Elements Discovered</legend>
+            <ul id="seo-h1-list" style="margin: 0; padding-left: 18px; font-size: 11px;">
+              <li>None recorded.</li>
+            </ul>
+          </fieldset>
+        </div>
+
+        <!-- TAB 5: HEADERS & CRAWL -->
+        <div id="tab-headers" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-headers">
+          <fieldset>
+            <legend>Search Engine Crawl Basics</legend>
+            <table class="win-table">
+              <tbody>
+                <tr>
+                  <td><strong>robots.txt Availability:</strong></td>
+                  <td id="crawl-robots">--</td>
+                </tr>
+                <tr>
+                  <td><strong>XML Sitemap:</strong></td>
+                  <td id="crawl-sitemap">--</td>
+                </tr>
+                <tr>
+                  <td><strong>HTTPS / SSL Security:</strong></td>
+                  <td id="crawl-https">--</td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+
+          <fieldset>
+            <legend>HTTP Headers &amp; Compression</legend>
+            <table class="win-table">
+              <tbody>
+                <tr>
+                  <td><strong>Content Encoding / Compression:</strong></td>
+                  <td id="hdr-compression">--</td>
+                </tr>
+                <tr>
+                  <td><strong>Cache-Control Policy:</strong></td>
+                  <td id="hdr-cache">--</td>
+                </tr>
+                <tr>
+                  <td><strong>Strict-Transport-Security (HSTS):</strong></td>
+                  <td id="hdr-hsts">--</td>
+                </tr>
+                <tr>
+                  <td><strong>Content-Security-Policy (CSP):</strong></td>
+                  <td id="hdr-csp">--</td>
+                </tr>
+                <tr>
+                  <td><strong>X-Content-Type-Options:</strong></td>
+                  <td id="hdr-x-content">--</td>
+                </tr>
+                <tr>
+                  <td><strong>X-Frame-Options:</strong></td>
+                  <td id="hdr-x-frame">--</td>
+                </tr>
+                <tr>
+                  <td><strong>Referrer-Policy:</strong></td>
+                  <td id="hdr-referrer">--</td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+        </div>
+
+        <!-- TAB 6: EXPORT -->
+        <div id="tab-export" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-export">
+          <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+            <button type="button" id="btn-copy-report" class="win-btn">Copy Report Text</button>
+            <button type="button" id="btn-print-report" class="win-btn">Print / Save PDF</button>
+          </div>
+          <div class="sunken-panel" style="max-height: 240px;">
+            <pre id="raw-json-output" style="margin: 0; font-family: monospace; font-size: 10px;"></pre>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-top: 12px;">
+          <button type="button" data-action="close-report" class="win-btn" style="min-width: 80px;">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: Compare Results Popup Window
+       ========================================================================= -->
+  <div id="modal-compare-results" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="compare-results-title">
+    <div class="window modal-dialog active-window">
+      <div class="title-bar">
+        <div class="title-bar-text" id="compare-results-title">
+          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
+          Comparison Results - Winner Declared
+        </div>
+        <div class="title-bar-controls">
+          <button type="button" data-action="close-compare" aria-label="Close">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <fieldset>
+          <legend>Side-by-Side Audit Comparison (Winners Highlighted)</legend>
+          <div id="compare-table-wrapper" style="overflow-x: auto;"></div>
+        </fieldset>
+        <div style="display: flex; justify-content: flex-end; margin-top: 12px;">
+          <button type="button" data-action="close-compare" class="win-btn" style="min-width: 80px;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 3: Classic Error Dialog
+       ========================================================================= -->
+  <div id="win-error" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="error-title">
+    <div class="window active-window" style="width: 380px; max-width: 95vw;">
+      <div class="title-bar">
+        <div class="title-bar-text" id="error-title">Error</div>
+        <div class="title-bar-controls">
+          <button type="button" data-action="close-error" aria-label="Close">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 14px;">
+          <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+            <circle cx="16" cy="16" r="14" fill="#cc0000" stroke="#000"/>
+            <path stroke="#fff" stroke-width="4" stroke-linecap="round" d="M10 10l12 12m0-12L10 22"/>
+          </svg>
+          <div id="error-message" style="font-size: 11px;">An unexpected error occurred.</div>
+        </div>
+        <div style="display: flex; justify-content: flex-end;">
+          <button type="button" data-action="close-error" class="win-btn" style="min-width: 75px;">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Win98 Taskbar-Style Footer Bar (PortHole 98 Style)
+       ========================================================================= -->
+  <footer id="site-footer" role="contentinfo" aria-label="Site Navigation and Credits">
+    <!-- Start Menu Popup -->
+    <div id="start-menu" role="menu" aria-label="Start Menu">
+      <div class="start-menu-banner" aria-hidden="true">SeoSonar 98</div>
+      <div class="start-menu-items">
+        <a href="#scanner-section" class="start-menu-item" role="menuitem">
+          <img src="/assets/icon-32.webp" width="16" height="16" alt="">
+          <span>🔍 Scan URL</span>
+        </a>
+        <a href="#compare-section" class="start-menu-item" role="menuitem">
+          <span style="font-size: 13px; line-height: 1;" aria-hidden="true">⚖</span>
+          <span>Compare</span>
+        </a>
+        <a href="#history-section" class="start-menu-item" role="menuitem">
+          <span style="font-size: 13px; line-height: 1;" aria-hidden="true">📁</span>
+          <span>History</span>
+        </a>
+        <div class="start-menu-divider" role="separator"></div>
+        <a href="#seo-guide" class="start-menu-item" role="menuitem">
+          <span style="font-size: 13px; line-height: 1;" aria-hidden="true">📖</span>
+          <span>Guide &amp; FAQ</span>
+        </a>
+        <a href="#about-section" class="start-menu-item" role="menuitem">
+          <span style="font-size: 13px; line-height: 1;" aria-hidden="true">ℹ</span>
+          <span>About</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-left-group">
+      <button type="button" id="footer-start-btn" class="win-btn" aria-haspopup="true" aria-expanded="false" aria-controls="start-menu">
+        <img src="/assets/icon-32.webp" width="16" height="16" alt="">
+        <span>Start</span>
+      </button>
+
+      <div class="footer-task-item" aria-current="page">
+        <img src="/assets/icon-32.webp" width="14" height="14" alt="">
+        <span>SeoSonar 98</span>
+      </div>
+
+      <span class="footer-branding">Made by Rayane Zirha · RZ™ Creative</span>
+    </div>
+
+    <div class="footer-right-group">
+      <div class="footer-links">
+        <a href="https://rayane.top" class="footer-link" target="_blank" rel="noopener">rayane.top</a>
+        <span aria-hidden="true" style="color: #666;">·</span>
+        <a href="https://github.com/r4yn" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <span id="footer-clock" class="footer-clock-box" aria-label="Current time">12:00 PM</span>
+    </div>
+  </footer>
+
+</body>
+</html>

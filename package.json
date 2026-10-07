@@ -1,0 +1,15 @@
+{
+  "name": "seosonar",
+  "version": "1.0.0",
+  "description": "Free retro Windows 98-styled SEO checker, pinged from around the world",
+  "private": true,
+  "scripts": {
+    "dev": "npx wrangler dev -c wrangler.jsonc --port 8788",
+    "deploy": "npx wrangler deploy -c wrangler.jsonc",
+    "set-url": "node scripts/set-url.mjs",
+    "assets": "python scripts/process-icons.py"
+  },
+  "devDependencies": {
+    "wrangler": "^4.148.0"
+  }
+}

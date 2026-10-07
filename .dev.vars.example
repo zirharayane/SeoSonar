@@ -1,0 +1,3 @@
+# Local development variables for Wrangler (Ignored by Git)
+# Restricted to the PageSpeed Insights API in Google Cloud Console
+PAGESPEED_API_KEY=your_key_here

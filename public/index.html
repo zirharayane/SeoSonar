@@ -32,10 +32,115 @@
 
   <!-- Resource Preload -->
   <link rel="preload" href="/assets/icon-256.webp" as="image" type="image/webp">
-  <link rel="preload" href="/css/win98.css" as="style">
+  <link rel="preload" href="/css/win98.css?v=2.1.0" as="style">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/win98.css">
+  <link rel="stylesheet" href="/css/win98.css?v=2.1.0">
+
+  <!-- Critical Inline Styles (Guarantees zero-delay, cache-proof retro styling) -->
+  <style>
+    body {
+      background-color: #008080 !important;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
+      background-size: 16px 16px !important;
+    }
+    .hero-section { text-align: center; margin-bottom: 24px; padding-top: 14px; }
+    .hero-title {
+      font-size: clamp(2.3rem, 5.5vw, 3.6rem);
+      font-weight: 800;
+      color: #ffffff !important;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.45);
+      line-height: 1.15;
+      margin: 0 0 14px 0;
+      letter-spacing: -0.5px;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+    .hero-subtitle {
+      font-size: 16px;
+      color: #e2f5f5 !important;
+      max-width: 660px;
+      margin: 0 auto 20px;
+      line-height: 1.55;
+      font-weight: 400;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+    .hero-cta-group { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; margin-bottom: 16px; }
+    .hero-cta-group .win-btn { height: 42px; padding: 0 22px; font-size: 13px; text-decoration: none; }
+    .hero-badge-line { font-size: 13px; font-weight: 600; color: #d1f2f2 !important; letter-spacing: 0.4px; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35); }
+    .group-box {
+      position: relative;
+      background-color: #c0c0c0 !important;
+      border-top: 1px solid #808080 !important;
+      border-left: 1px solid #808080 !important;
+      border-right: 1px solid #ffffff !important;
+      border-bottom: 1px solid #ffffff !important;
+      box-shadow: inset 1px 1px 0 #ffffff, 1px 1px 0 #808080, 2px 2px 0 rgba(0, 0, 0, 0.35) !important;
+      padding: 22px 14px 14px;
+      margin-bottom: 24px;
+      color: #000000 !important;
+    }
+    .group-box-title {
+      position: absolute;
+      top: -8px;
+      left: 12px;
+      background-color: #c0c0c0 !important;
+      padding: 0 6px;
+      font-size: 11px;
+      font-weight: bold;
+      color: #000000 !important;
+      line-height: 14px;
+      user-select: none;
+    }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    .feature-panel, .wizard-step, .app-panel {
+      background-color: #c0c0c0 !important;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: #000000 !important;
+    }
+    .bevel-raised {
+      background-color: #c0c0c0 !important;
+      border-top: 2px solid #ffffff !important;
+      border-left: 2px solid #ffffff !important;
+      border-right: 2px solid #000000 !important;
+      border-bottom: 2px solid #000000 !important;
+      box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px -1px 0 #808080 !important;
+      color: #000000 !important;
+    }
+    .feature-pill, .bevel-sunken-gray {
+      background-color: #c0c0c0 !important;
+      border-top: 1px solid #808080 !important;
+      border-left: 1px solid #808080 !important;
+      border-right: 1px solid #ffffff !important;
+      border-bottom: 1px solid #ffffff !important;
+      box-shadow: inset 1px 1px 0 #000000, inset -1px -1px 0 #dfdfdf !important;
+      color: #333333 !important;
+      padding: 2px 6px;
+      font-size: 9px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .feature-title-navy { color: #000080 !important; font-weight: bold; font-size: 13px; line-height: 1.25; }
+    .wizard-row { display: flex; align-items: center; gap: 10px; }
+    .wizard-step { flex: 1; min-height: 98px; }
+    .step-badge {
+      width: 22px; height: 20px; min-width: 22px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background-color: #c0c0c0 !important; color: #000000 !important; font-weight: bold;
+      border-top: 2px solid #ffffff; border-left: 2px solid #ffffff;
+      border-right: 2px solid #000000; border-bottom: 2px solid #000000;
+    }
+    .wizard-arrow { font-size: 16px; font-weight: bold; color: #000080 !important; flex-shrink: 0; }
+    @media (max-width: 680px) {
+      .wizard-row { flex-direction: column; }
+      .wizard-arrow { transform: rotate(90deg); margin: 2px 0; }
+    }
+  </style>
 
   <!-- Structured Data: WebApplication & FAQPage -->
   <script type="application/ld+json">
@@ -105,10 +210,10 @@
 </head>
 <body>
 
-  <!-- Main Stacked Container (PortHole 98 Parity: Centered 860px Canvas with Blueprint Grid Margins) -->
+  <!-- Main Stacked Container (Consistent 1000px Max-Width) -->
   <main id="page-container">
 
-    <!-- HERO SECTION (PortHole 98 Style - Grand Retro Intro) -->
+    <!-- HERO SECTION (PortHole 98 Parity - Grand Retro Intro) -->
     <header class="hero-section">
       <h1 class="hero-title">Your website. 5 continents.<br>One audit.</h1>
       <p class="hero-subtitle">Audit Core Web Vitals, probe latency across 5 continents, and inspect technical SEO — in a Windows 98 suite.</p>
@@ -140,7 +245,7 @@
         </div>
       </div>
 
-      <!-- Window Menu Bar (PortHole 98 Parity) -->
+      <!-- Window Menu Bar -->
       <div class="win-menu-bar" role="menubar">
         <span class="win-menu-item" role="menuitem"><u>F</u>ile</span>
         <span class="win-menu-item" role="menuitem"><u>A</u>udit</span>
@@ -228,7 +333,7 @@
       <div class="group-box-title">What it does</div>
       <div class="grid-3">
         <div class="bevel-raised feature-panel">
-          <div class="bevel-sunken-gray feature-pill">SPEED BENCHMARKS</div>
+          <div class="feature-pill">SPEED BENCHMARKS</div>
           <div class="feature-title-row">
             <span class="win-icon-glyph" aria-hidden="true">⚡</span>
             <span class="feature-title-navy">Core Web Vitals &amp; Speed</span>
@@ -237,7 +342,7 @@
         </div>
 
         <div class="bevel-raised feature-panel">
-          <div class="bevel-sunken-gray feature-pill">GLOBAL REACHABILITY</div>
+          <div class="feature-pill">GLOBAL REACHABILITY</div>
           <div class="feature-title-row">
             <span class="win-icon-glyph" aria-hidden="true">🌐</span>
             <span class="feature-title-navy">5-Continent Probe Network</span>
@@ -246,7 +351,7 @@
         </div>
 
         <div class="bevel-raised feature-panel">
-          <div class="bevel-sunken-gray feature-pill">TECHNICAL CRAWL</div>
+          <div class="feature-pill">TECHNICAL CRAWL</div>
           <div class="feature-title-row">
             <span class="win-icon-glyph" aria-hidden="true">🔍</span>
             <span class="feature-title-navy">On-Page SEO &amp; Security</span>
@@ -262,7 +367,7 @@
       <div class="wizard-row">
         <div class="bevel-raised wizard-step">
           <div class="wizard-header">
-            <div class="win-btn step-badge">1</div>
+            <div class="step-badge">1</div>
             <span class="wizard-step-title">Enter Target URL</span>
           </div>
           <p class="win-panel-text">Enter any website address to initiate SSRF-sanitized crawl probes.</p>
@@ -272,7 +377,7 @@
 
         <div class="bevel-raised wizard-step">
           <div class="wizard-header">
-            <div class="win-btn step-badge">2</div>
+            <div class="step-badge">2</div>
             <span class="wizard-step-title">Global Edge Probes</span>
           </div>
           <p class="win-panel-text">Concurrent probes ping the target across 5 continents while Core Web Vitals are analyzed.</p>
@@ -282,7 +387,7 @@
 
         <div class="bevel-raised wizard-step">
           <div class="wizard-header">
-            <div class="win-btn step-badge">3</div>
+            <div class="step-badge">3</div>
             <span class="wizard-step-title">Get the Verdict</span>
           </div>
           <p class="win-panel-text">Inspect the complete tabbed diagnostic report, export JSON, or compare competitors side-by-side.</p>
@@ -517,32 +622,6 @@
             <button class="win-btn" disabled style="width: 100%; height: 26px; font-size: 11px;">Coming Soon</button>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- 5. About Window (Active Blue Title Bar, Consistent Width) -->
-    <section id="about-section" class="window active-window" aria-labelledby="about-heading">
-      <div class="title-bar">
-        <div class="title-bar-text" id="about-heading">
-          <img src="/assets/icon-32.webp" class="title-bar-icon" alt="" width="16" height="16">
-          About SeoSonar 98
-        </div>
-        <div class="title-bar-controls">
-          <button type="button" aria-label="Minimize">_</button>
-          <button type="button" aria-label="Close">✕</button>
-        </div>
-      </div>
-      <div class="window-body" style="text-align: center;">
-        <img src="/assets/icon-256.webp" alt="SeoSonar Brass Porthole Icon" width="80" height="80" style="image-rendering: pixelated; margin: 6px 0;">
-        <h2 style="font-size: 15px; margin: 4px 0 2px 0; color: #000080;">SeoSonar 98</h2>
-        <p style="margin: 0 0 10px 0; font-size: 11px; color: #222;">Free retro SEO checker, pinged from around the world</p>
-        <div class="sunken-panel gray" style="text-align: left; max-width: 440px; margin: 0 auto 12px auto; font-size: 11px;">
-          <p style="margin: 4px 0;"><strong>Product:</strong> SeoSonar 98</p>
-          <p style="margin: 4px 0;"><strong>Author:</strong> Rayane Zirha</p>
-          <p style="margin: 4px 0;"><strong>Trademark:</strong> RZ™ Creative</p>
-          <p style="margin: 4px 0;"><strong>Build:</strong> 1.2</p>
-        </div>
-        <p style="font-size: 11px; color: #333; margin: 0;">Made by <strong>Rayane Zirha</strong> · RZ™ Creative</p>
       </div>
     </section>
 
@@ -921,10 +1000,6 @@
         <a href="#seo-guide" class="start-menu-item" role="menuitem">
           <span style="font-size: 13px; line-height: 1;" aria-hidden="true">📖</span>
           <span>Guide &amp; FAQ</span>
-        </a>
-        <a href="#about-section" class="start-menu-item" role="menuitem">
-          <span style="font-size: 13px; line-height: 1;" aria-hidden="true">ℹ</span>
-          <span>About</span>
         </a>
       </div>
     </div>

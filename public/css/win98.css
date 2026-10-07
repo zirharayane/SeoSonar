@@ -215,43 +215,47 @@ body {
 
 /* 3D Bevel Utilities */
 .bevel-raised {
-  background-color: var(--surface);
-  border-top: 2px solid var(--button-light);
-  border-left: 2px solid var(--button-light);
-  border-right: 2px solid var(--button-dark-shadow);
-  border-bottom: 2px solid var(--button-dark-shadow);
-  box-shadow: inset 1px 1px 0 var(--button-highlight), inset -1px -1px 0 var(--button-shadow);
+  background-color: var(--surface) !important;
+  border-top: 2px solid var(--button-light) !important;
+  border-left: 2px solid var(--button-light) !important;
+  border-right: 2px solid var(--button-dark-shadow) !important;
+  border-bottom: 2px solid var(--button-dark-shadow) !important;
+  box-shadow: inset 1px 1px 0 var(--button-highlight), inset -1px -1px 0 var(--button-shadow) !important;
+  color: #000000 !important;
 }
 
 .bevel-sunken {
-  background-color: #ffffff;
-  border-top: 2px solid var(--button-dark-shadow);
-  border-left: 2px solid var(--button-dark-shadow);
-  border-right: 2px solid var(--button-light);
-  border-bottom: 2px solid var(--button-light);
-  box-shadow: inset 1px 1px 0 #555555, inset -1px -1px 0 var(--button-highlight);
+  background-color: #ffffff !important;
+  border-top: 2px solid var(--button-dark-shadow) !important;
+  border-left: 2px solid var(--button-dark-shadow) !important;
+  border-right: 2px solid var(--button-light) !important;
+  border-bottom: 2px solid var(--button-light) !important;
+  box-shadow: inset 1px 1px 0 #555555, inset -1px -1px 0 var(--button-highlight) !important;
+  color: #000000 !important;
 }
 
 .bevel-sunken-gray {
-  background-color: var(--surface);
-  border-top: 1px solid var(--button-shadow);
-  border-left: 1px solid var(--button-shadow);
-  border-right: 1px solid var(--button-light);
-  border-bottom: 1px solid var(--button-light);
-  box-shadow: inset 1px 1px 0 var(--button-dark-shadow), inset -1px -1px 0 var(--button-highlight);
+  background-color: var(--surface) !important;
+  border-top: 1px solid var(--button-shadow) !important;
+  border-left: 1px solid var(--button-shadow) !important;
+  border-right: 1px solid var(--button-light) !important;
+  border-bottom: 1px solid var(--button-light) !important;
+  box-shadow: inset 1px 1px 0 var(--button-dark-shadow), inset -1px -1px 0 var(--button-highlight) !important;
+  color: #000000 !important;
 }
 
 /* Win98 Group Box Container (Etched Border Shell) */
 .group-box {
   position: relative;
-  background-color: var(--surface);
-  border-top: 1px solid var(--button-shadow);
-  border-left: 1px solid var(--button-shadow);
-  border-right: 1px solid var(--button-light);
-  border-bottom: 1px solid var(--button-light);
-  box-shadow: inset 1px 1px 0 var(--button-light), 1px 1px 0 var(--button-shadow);
+  background-color: var(--surface) !important;
+  border-top: 1px solid var(--button-shadow) !important;
+  border-left: 1px solid var(--button-shadow) !important;
+  border-right: 1px solid var(--button-light) !important;
+  border-bottom: 1px solid var(--button-light) !important;
+  box-shadow: inset 1px 1px 0 var(--button-light), 1px 1px 0 var(--button-shadow), 2px 2px 0 rgba(0, 0, 0, 0.35) !important;
   padding: 22px 14px 14px;
-  color: #000000;
+  margin-bottom: 24px;
+  color: #000000 !important;
   font-family: var(--win-font);
 }
 
@@ -259,12 +263,12 @@ body {
   position: absolute;
   top: -8px;
   left: 12px;
-  background-color: var(--surface);
+  background-color: var(--surface) !important;
   padding: 0 6px;
   font-family: var(--win-font);
   font-size: 11px;
   font-weight: bold;
-  color: #000000;
+  color: #000000 !important;
   line-height: 14px;
   user-select: none;
 }
@@ -278,11 +282,12 @@ body {
 
 /* Feature Panels (What it does) */
 .feature-panel {
-  background-color: var(--surface);
+  background-color: var(--surface) !important;
   padding: 14px 12px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  color: #000000 !important;
 }
 
 .feature-pill {
@@ -291,7 +296,13 @@ body {
   font-size: 9px;
   font-weight: bold;
   letter-spacing: 0.5px;
-  color: var(--button-shadow);
+  color: #555555 !important;
+  background-color: var(--surface) !important;
+  border-top: 1px solid var(--button-shadow);
+  border-left: 1px solid var(--button-shadow);
+  border-right: 1px solid var(--button-light);
+  border-bottom: 1px solid var(--button-light);
+  box-shadow: inset 1px 1px 0 var(--button-dark-shadow);
   padding: 2px 6px;
   font-family: var(--win-font);
   text-transform: uppercase;
@@ -313,14 +324,14 @@ body {
   font-family: var(--win-font);
   font-size: 13px;
   font-weight: bold;
-  color: var(--dialog-blue);
+  color: var(--dialog-blue) !important;
   line-height: 1.25;
 }
 
 .win-panel-text {
   font-family: var(--win-font);
   font-size: 11px;
-  color: #000000;
+  color: #000000 !important;
   line-height: 1.45;
   margin: 0;
 }
@@ -334,12 +345,13 @@ body {
 
 .wizard-step {
   flex: 1;
-  background-color: var(--surface);
+  background-color: var(--surface) !important;
   padding: 14px 12px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   min-height: 98px;
+  color: #000000 !important;
 }
 
 .wizard-header {
@@ -361,21 +373,26 @@ body {
   justify-content: center;
   pointer-events: none;
   flex-shrink: 0;
-  background-color: var(--surface);
+  background-color: var(--surface) !important;
+  color: #000000 !important;
+  border-top: 2px solid var(--button-light);
+  border-left: 2px solid var(--button-light);
+  border-right: 2px solid var(--button-dark-shadow);
+  border-bottom: 2px solid var(--button-dark-shadow);
 }
 
 .wizard-step-title {
   font-family: var(--win-font);
   font-size: 12px;
   font-weight: bold;
-  color: #000000;
+  color: #000000 !important;
 }
 
 .wizard-arrow {
   font-family: var(--win-font);
   font-size: 16px;
   font-weight: bold;
-  color: var(--dialog-blue);
+  color: var(--dialog-blue) !important;
   user-select: none;
   flex-shrink: 0;
 }
@@ -386,7 +403,7 @@ body {
 }
 
 .app-panel {
-  background-color: var(--surface);
+  background-color: var(--surface) !important;
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -394,6 +411,7 @@ body {
   height: 100%;
   min-height: 136px;
   gap: 10px;
+  color: #000000 !important;
 }
 
 .app-info-row {

@@ -1,159 +1,170 @@
-<div align="center">
+# SeoSonar 98
 
-```
-  ____                 ____                              ___   ___  
- / ___|  ___  ___     / ___|  ___  _ __   __ _ _ __     / _ \ ( _ ) 
- \___ \ / _ \/ _ \    \___ \ / _ \| '_ \ / _` | '__|   | (_) |/ _ \ 
-  ___) |  __/ (_) |    ___) | (_) | | | | (_| | |       \__, | (_) |
- |____/ \___|\___/____|____/ \___/|_| |_|\__,_|_|         /_/ \___/ 
-                |_____|                                              
-```
+> Free retro Windows 98-styled SEO checker, pinged from around the world.  
+> Created by **Rayane Zirha (Zirha Rayane)** &mdash; [rayane.top](https://rayane.top)
 
-# 🌐 SeoSonar 98
-
-### *Free retro Windows 98-styled SEO checker, pinged from around the world.*
-
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-seosonar.rayane.top-000080?style=for-the-badge&logo=cloudflare&logoColor=white)](https://seosonar.rayane.top)
-[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers%20%2B%20Assets-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
-[![Pure Vanilla](https://img.shields.io/badge/Stack-Vanilla%20HTML%20%2B%20CSS%20%2B%20JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org)
-[![Lighthouse 100](https://img.shields.io/badge/Lighthouse-100%2F100%20Audit-00C48C?style=for-the-badge&logo=lighthouse&logoColor=white)](https://seosonar.rayane.top)
-
-<br/>
-
-[**Explore Live Website »**](https://seosonar.rayane.top)
-
-</div>
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-seosonar.rayane.top-000080?style=flat-square&logo=cloudflare&logoColor=white)](https://seosonar.rayane.top)
+[![Author](https://img.shields.io/badge/Author-Rayane%20Zirha%20(Zirha%20Rayane)-008080?style=flat-square)](https://rayane.top)
+[![Platform](https://img.shields.io/badge/Platform-Cloudflare%20Workers%20%2B%20Assets-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
+[![Tech Stack](https://img.shields.io/badge/Stack-Vanilla%20HTML%20%2B%20CSS%20%2B%20JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
 ---
 
-## 🕹️ About SeoSonar 98
+## Overview
 
-**SeoSonar 98** brings authentic Microsoft Windows 98 desktop nostalgia to modern web diagnostics. It is an ultra-fast, zero-framework website auditor designed for technical SEOs, webmasters, and developers who value transparency, brutalist aesthetics, and raw edge speed.
+**SeoSonar 98** is a zero-framework, edge-accelerated website diagnostic tool pairing authentic Windows 98 desktop ergonomics with modern technical SEO and network auditing.
 
-Enter any target URL and watch real-time disk-defragmentation progress blocks light up as parallel audits scan server headers, on-page technical factors, Core Web Vitals lab data, and latency across 5 continents.
+Built by **Rayane Zirha (Zirha Rayane)**, SeoSonar inspects real-world website performance, Core Web Vitals lab data, technical crawl configurations, and global HTTP response latency across 5 continents in parallel.
 
----
-
-## 🌟 Key Features
-
-### 🖥️ Authentic Win98 Experience
-- **Pixel-Snapped Retro Desktop:** Classic teal desktop (`#008080`), authentic 3D beveled windows, functional title-bar minimize/close controls, and sound toggles.
-- **Taskbar & Start Menu:** Live system tray clock, active task switching, and direct author links.
-- **Defrag-Style Scan Animation:** Real-time visual disk-defrag animation with dynamic audit progress updates.
-- **Accessible Window Popups:** Centered tabbed report popup with full keyboard navigation (Tab lock, Esc to close, Arrow keys for tabs).
-- **"My Documents" Local History:** Stores recent audits in `localStorage` for one-click re-inspection.
-
-### 📊 Transparent 4-Factor System Rating (0–100)
-A balanced diagnostic score computed with mathematical transparency:
-- ⚡ **Performance (35%):** Average of Desktop PC and Mobile Core Web Vitals.
-- 🎯 **On-Page Technical SEO (35%):** Title (30-60 chars), meta description (120-160 chars), single H1 tag, canonical validity, mobile viewport, lang attribute, schema.org detection.
-- ♿ **Accessibility (15%):** Color contrast ratios, image `alt` attributes, aria labels, and form label associations.
-- 🛡️ **Web Best Practices (15%):** HTTPS enforcement, modern compression (Brotli/Gzip), HSTS, CSP, and X-Content-Type security headers.
-- 🌍 **Country Probe Latency Penalty:** Deductions (up to 15 points) if remote probes exceed 1500 ms or return unreachable statuses.
-
-### 🌐 5-Continent Global Latency Probes
-Real-time distributed HTTP latency measurements across 5 strategic global nodes:
-- 🇺🇸 **North America:** United States (US)
-- 🇩🇪 **Europe:** Germany (DE)
-- 🇧🇷 **South America:** Brazil (BR)
-- 🇯🇵 **Asia-Pacific:** Japan (JP)
-- 🇲🇦 **Africa:** Morocco (MA)
-
-### 🥊 Compare Mode
-Enter two competing URLs side by side to compare performance scores, Core Web Vitals metrics, and regional response times with instant winner highlights.
-
-### 🖨️ Retro Export & Print
-- **One-Click Plain Text Copy:** Monospaced ASCII summary formatted for terminal sharing.
-- **Dedicated Print Stylesheet:** `@media print` layout styled like a dot-matrix / retro continuous paper audit log.
+### Live Deployments & Author Links
+- **Production URL:** [https://seosonar.rayane.top](https://seosonar.rayane.top)
+- **Author Portfolio:** [https://rayane.top](https://rayane.top)
+- **GitHub Profile:** [https://github.com/zirharayane](https://github.com/zirharayane)
+- **Companion Project (PortHole 98):** [https://porthole.rayane.top](https://porthole.rayane.top)
 
 ---
 
-## 🏗️ Architecture & Stack
+## Core Capabilities
+
+### 1. Dual Viewport Core Web Vitals
+- Evaluates Desktop PC (1920x1080) and Mobile (360x640) rendering side-by-side.
+- Measures Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), Total Blocking Time (TBT), First Contentful Paint (FCP), and Speed Index (SI).
+- Displays real-user field data from Chrome UX Report (CrUX) when domain volume qualifies.
+
+### 2. 5-Continent Global Latency Probes
+Issues concurrent real-time HTTP probes from distributed edge endpoints:
+- **North America:** United States (`us-east.seosonar.net`)
+- **Europe:** Germany (`eu-central.seosonar.net`)
+- **South America:** Brazil (`sa-east.seosonar.net`)
+- **Asia-Pacific:** Japan (`ap-northeast.seosonar.net`)
+- **Africa:** Morocco (`af-north.seosonar.net`)
+
+### 3. Technical On-Page SEO Inspection
+- **Title Tag:** Character length check (optimal: 30–60 characters).
+- **Meta Description:** Character length check (optimal: 120–160 characters).
+- **H1 Hierarchy:** Enforces single primary heading standard.
+- **Canonical URL:** Validates canonical link target against resolved URL.
+- **Mobile Viewport:** Checks for proper responsive tag configuration.
+- **Structured Data:** Detects and parses JSON-LD schemas (`Organization`, `WebSite`, `Article`, `Product`, `FAQPage`).
+- **Images:** Computes total image count and flags missing `alt` attributes.
+
+### 4. Directives & HTTP Security Headers
+- Discovers and validates `robots.txt` and XML sitemap availability.
+- Evaluates HTTPS enforcement and redirect count.
+- Analyzes security response headers: `Strict-Transport-Security` (HSTS), `Content-Security-Policy` (CSP), `X-Content-Type-Options`, `X-Frame-Options`, and `Referrer-Policy`.
+- Detects modern HTTP compression encoding (`br`, `gzip`, `zstd`).
+
+### 5. Side-by-Side Comparison Engine
+- Runs concurrent audits on two target URLs.
+- Highlights winners for each category (System Rating, Core Web Vitals, payload size, and continental probe latency).
+
+### 6. Local Audit History & Plain-Text Export
+- Stores recent audit records privately in browser `localStorage`.
+- Formats complete diagnostic results as plain-text ASCII reports or printer-ready audit logs.
+
+---
+
+## System Rating Formula
+
+The 0–100 composite System Rating is computed using a transparent weighted formula:
+
+| Dimension | Weight | Description |
+| :--- | :--- | :--- |
+| **Performance** | 35% | Weighted average of Desktop and Mobile Core Web Vitals lab scores |
+| **On-Page SEO** | 35% | Technical compliance across title, description, H1, canonical, and schemas |
+| **Accessibility** | 15% | Basic a11y checks including image alt tags and lang attribute |
+| **Best Practices** | 15% | HTTPS enforcement, compression, and security response headers |
+
+*Note: Up to 15 penalty points are deducted if global probes encounter response times exceeding 1,500 ms or return non-200 HTTP statuses.*
+
+---
+
+## Technical Architecture
 
 ```
 SeoSonar/
-├── public/                 # Static Assets (Served directly via Cloudflare Assets)
-│   ├── css/win98.css       # Pruned authentic Windows 98 stylesheet
-│   ├── js/app.js           # Main UI, modals, sound effects, defrag animation
-│   ├── js/results.js       # Report engine, compare mode & history manager
-│   ├── index.html          # Semantic HTML5 with JSON-LD FAQ/WebSite schemas
-│   ├── 404.html            # Retro Blue Screen of Death (BSOD) 404 page
+├── public/                 # Static frontend assets (Cloudflare Workers Assets)
+│   ├── assets/             # Pixel-art icons and WebP illustrations
+│   ├── css/win98.css       # Authentic Windows 98 design system
+│   ├── js/app.js           # Main UI controller, audio effects, defrag animation
+│   ├── js/results.js       # Report engine, comparison suite, local history
+│   ├── index.html          # Semantic HTML5, WebP Open Graph, JSON-LD Schema
+│   ├── 404.html            # Windows BSOD 404 error page
 │   ├── robots.txt          # Root crawl directives
-│   └── sitemap.xml         # XML Sitemap index
+│   └── sitemap.xml         # XML sitemap index
 ├── src/
 │   └── worker.js           # Cloudflare Worker API router (/api/scan)
 ├── scripts/
-│   ├── set-url.mjs         # Single-source canonical URL manager
-│   └── process-icons.py    # Pixel-art icon processor
+│   └── set-url.mjs         # Production URL synchronizer
 ├── wrangler.jsonc          # Cloudflare Worker + Assets + KV configuration
-└── package.json            # Scripts & dependencies
+└── package.json            # Scripts & project metadata
 ```
 
-- **Frontend:** Plain HTML5, Vanilla CSS, Vanilla ES Modules. **Zero client-side dependencies / 0 KB framework overhead.**
-- **Backend:** Cloudflare Workers with Static Assets (`src/worker.js`).
-- **Caching & Rate Limiting:** Cloudflare KV (`SEOSONAR_KV`):
-  - Per-IP rate limiting (15 scans/hr).
-  - 20-minute whole-report and strategy-level caching.
-  - 7-day stale backup fallback.
-  - Global daily usage counter with graceful degradations (Desktop-only at 90%, partial rating at 100%).
-- **Security:** Strict SSRF protection (DNS-over-HTTPS resolution, loopback/private/metadata IP blocking, redirect limits, 2MB payload caps).
+### Zero-Framework Architecture
+- **Frontend:** Pure HTML5, Vanilla CSS, and native ES Modules. Zero runtime build tools, zero dependencies, and 0 KB client framework payload.
+- **Backend:** Cloudflare Workers running on V8 isolates at the edge.
+- **Caching & Tiered Storage:** Cloudflare KV (`SEOSONAR_KV`):
+  - 20-minute scan response cache.
+  - Per-IP rate limiting (15 scans/hour).
+  - 7-day stale fallback cache for external API outages.
+- **SSRF Defense Firewall:** Hostname resolution through DNS-over-HTTPS with immediate rejection of loopback (`127.0.0.0/8`), private (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`), link-local (`169.254.0.0/16`), and cloud metadata IP ranges.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### 1. Clone & Install
+### Prerequisites
+- Node.js 18+
+- npm or pnpm
+- Cloudflare Wrangler CLI (`npm i -g wrangler`)
+
+### 1. Installation
 ```bash
 git clone https://github.com/zirharayane/SeoSonar.git
 cd SeoSonar
 npm install
 ```
 
-### 2. Local Development
-Create `.dev.vars` in the repository root:
-```bash
-PAGESPEED_API_KEY="your_api_key_here"
+### 2. Configure Local Environment
+Create a `.dev.vars` file in the project root:
+```ini
+PAGESPEED_API_KEY="your_google_pagespeed_api_key"
 ```
 
-Start the local server with simulated KV and static assets:
+### 3. Local Development
 ```bash
 npm run dev
 ```
-Open `http://localhost:8788/` in your browser.
+Navigate to `http://localhost:8788` to view the local server with simulated Cloudflare KV.
 
 ---
 
-## ☁️ Cloudflare Deployment
+## Deployment
 
-### 1. Deploy via Wrangler CLI
+Deploy directly to Cloudflare Workers using Wrangler:
 
 ```bash
-# 1. Authenticate with Cloudflare
+# 1. Log in to Cloudflare
 npx wrangler login
 
-# 2. Create your production KV namespace
+# 2. Bind production KV namespace (if not already provisioned)
 npx wrangler kv namespace create SEOSONAR_KV
 
-# 3. Add your secret key
+# 3. Add PageSpeed secret key
 npx wrangler secret put PAGESPEED_API_KEY --name seosonar
 
-# 4. Deploy
-npm run deploy
-```
-
-### 2. Configure Custom Domain
-
-```bash
-# Update canonical tags, sitemap, and headers:
-npm run set-url -- https://seosonar.rayane.top
+# 4. Deploy assets and worker
 npm run deploy
 ```
 
 ---
 
-## 📄 License & Credits
+## Author & Attribution
 
-Built with ❤️ by **[Rayane Zirha](https://rayane.top)** (RZ™ Creative).
+- **Creator:** Rayane Zirha (Zirha Rayane)
+- **Website:** [https://rayane.top](https://rayane.top)
+- **GitHub:** [@zirharayane](https://github.com/zirharayane)
+- **Brand:** RZ™ Creative
 
-- Inspired by classic **Microsoft Windows 98**.
-- Dedicated to technical SEOs who appreciate retro software and blistering web performance.
+SeoSonar is open-source software licensed under the [MIT License](LICENSE).

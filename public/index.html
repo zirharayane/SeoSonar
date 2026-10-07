@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SeoSonar - Free Retro SEO Checker & Global Website Auditor</title>
-  <meta name="description" content="Free retro Windows 98-styled website auditor. Analyze Core Web Vitals, global probe latency across 5 continents, on-page SEO tags, and security headers.">
-  <meta name="author" content="Rayane Zirha">
+  <meta name="description" content="Free retro Windows 98-styled website auditor by Rayane Zirha (Zirha Rayane). Analyze Core Web Vitals, global probe latency across 5 continents, on-page SEO tags, and security headers.">
+  <meta name="author" content="Rayane Zirha (Zirha Rayane)">
+  <meta name="creator" content="Rayane Zirha (Zirha Rayane)">
   <meta name="theme-color" content="#008080">
   <link rel="canonical" href="https://seosonar.rayane.top/">
 
@@ -17,18 +18,20 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://seosonar.rayane.top/">
-  <meta property="og:title" content="SeoSonar - Free Retro SEO Checker & Global Website Auditor">
-  <meta property="og:description" content="Free retro Windows 98-styled website auditor. Ping websites across 5 continents, check Core Web Vitals, on-page SEO, and security headers.">
-  <meta property="og:image" content="https://seosonar.rayane.top/og-image.png">
+  <meta property="og:site_name" content="SeoSonar 98 by Rayane Zirha">
+  <meta property="og:title" content="SeoSonar - Free Retro SEO Checker by Rayane Zirha">
+  <meta property="og:description" content="Free retro Windows 98-styled website auditor by Rayane Zirha (Zirha Rayane). Ping websites across 5 continents, check Core Web Vitals, on-page SEO, and security headers.">
+  <meta property="og:image" content="https://seosonar.rayane.top/og-image.webp">
+  <meta property="og:image:type" content="image/webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://seosonar.rayane.top/">
-  <meta name="twitter:title" content="SeoSonar - Free Retro SEO Checker & Global Website Auditor">
-  <meta name="twitter:description" content="Free retro Windows 98-styled website auditor. Ping websites across 5 continents, check Core Web Vitals, on-page SEO, and security headers.">
-  <meta name="twitter:image" content="https://seosonar.rayane.top/og-image.png">
+  <meta name="twitter:title" content="SeoSonar - Free Retro SEO Checker by Rayane Zirha">
+  <meta name="twitter:description" content="Free retro Windows 98-styled website auditor by Rayane Zirha (Zirha Rayane). Ping websites across 5 continents, check Core Web Vitals, on-page SEO, and security headers.">
+  <meta name="twitter:image" content="https://seosonar.rayane.top/og-image.webp">
 
   <!-- Resource Preload -->
   <link rel="preload" href="/assets/icon-256.webp" as="image" type="image/webp">
@@ -148,18 +151,32 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Person",
+        "@id": "https://rayane.top/#person",
+        "name": "Rayane Zirha",
+        "alternateName": ["Zirha Rayane", "zirharayane", "r4yn"],
+        "url": "https://rayane.top",
+        "sameAs": [
+          "https://github.com/zirharayane",
+          "https://porthole.rayane.top",
+          "https://seosonar.rayane.top"
+        ],
+        "jobTitle": "Software Developer & Creator of SeoSonar 98"
+      },
+      {
         "@type": "WebApplication",
         "@id": "https://seosonar.rayane.top/#webapp",
         "name": "SeoSonar 98",
         "url": "https://seosonar.rayane.top/",
-        "description": "Free retro Windows 98-styled SEO checker, pinged from around the world. Audits Core Web Vitals, global probe response latency, and technical crawl parameters.",
+        "description": "Free retro Windows 98-styled SEO checker, pinged from around the world by Rayane Zirha (Zirha Rayane). Audits Core Web Vitals, global probe response latency, and technical crawl parameters.",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "browserRequirements": "Requires JavaScript. Works on all modern web browsers.",
         "author": {
-          "@type": "Person",
-          "name": "Rayane Zirha",
-          "url": "https://seosonar.rayane.top/"
+          "@id": "https://rayane.top/#person"
+        },
+        "creator": {
+          "@id": "https://rayane.top/#person"
         },
         "publisher": {
           "@type": "Organization",
@@ -220,10 +237,10 @@
 
       <div class="hero-cta-group">
         <a href="#scan-url-input" class="win-btn win-btn-primary" onclick="document.getElementById('scan-url-input').focus()">
-          <span>⚡</span> Run Free Audit
+          Run Free Audit
         </a>
         <a href="https://github.com/zirharayane/SeoSonar" target="_blank" rel="noopener noreferrer" class="win-btn">
-          <span>💻</span> View on GitHub
+          View on GitHub
         </a>
       </div>
 
@@ -240,7 +257,6 @@
           SeoSonar 98 - Site Auditor
         </div>
         <div class="title-bar-controls">
-          <button type="button" aria-label="Minimize">_</button>
           <button type="button" aria-label="Close">✕</button>
         </div>
       </div>
@@ -254,13 +270,13 @@
       </div>
 
       <div class="window-body">
-        <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 12px;">
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; margin-bottom: 16px;">
           <img src="/assets/icon-64.webp" alt="SeoSonar Brass Porthole" width="48" height="48" style="image-rendering: pixelated;">
           <div>
-            <h2 style="margin: 0 0 4px 0; font-size: 14px; color: #000080;">
+            <h2 style="margin: 0 0 4px 0; font-size: 15px; color: #000080;">
               SeoSonar: Free Retro SEO Checker &amp; Global Website Auditor
             </h2>
-            <p style="margin: 0; color: #333333; font-size: 11px;">
+            <p style="margin: 0 auto; max-width: 600px; color: #333333; font-size: 11px;">
               Enter any URL below to run global probe latency tests, Desktop &amp; Mobile speed tests, and technical SEO compliance checks.
             </p>
           </div>
@@ -285,9 +301,9 @@
               Clear
             </button>
           </div>
-          <div id="reopen-container" style="display: none; margin-top: 4px;">
-            <button type="button" id="btn-reopen-scan" class="win-btn" style="min-width: auto; padding: 2px 8px; font-weight: bold;">
-              📑 Reopen Last Report
+          <div id="reopen-container" style="display: none; margin-top: 4px; text-align: center;">
+            <button type="button" id="btn-reopen-scan" class="win-btn" style="min-width: auto; padding: 2px 10px; font-weight: bold;">
+              Reopen Last Report
             </button>
           </div>
         </form>
@@ -335,7 +351,6 @@
         <div class="bevel-raised feature-panel">
           <div class="feature-pill">SPEED BENCHMARKS</div>
           <div class="feature-title-row">
-            <span class="win-icon-glyph" aria-hidden="true">⚡</span>
             <span class="feature-title-navy">Core Web Vitals &amp; Speed</span>
           </div>
           <p class="win-panel-text">Audits Desktop and Mobile LCP, CLS, TBT, and FCP speed metrics with side-by-side performance scoring.</p>
@@ -344,7 +359,6 @@
         <div class="bevel-raised feature-panel">
           <div class="feature-pill">GLOBAL REACHABILITY</div>
           <div class="feature-title-row">
-            <span class="win-icon-glyph" aria-hidden="true">🌐</span>
             <span class="feature-title-navy">5-Continent Probe Network</span>
           </div>
           <p class="win-panel-text">Pings your domain in real time from North America, Europe, South America, Asia-Pacific, and Africa edge nodes.</p>
@@ -353,7 +367,6 @@
         <div class="bevel-raised feature-panel">
           <div class="feature-pill">TECHNICAL CRAWL</div>
           <div class="feature-title-row">
-            <span class="win-icon-glyph" aria-hidden="true">🔍</span>
             <span class="feature-title-navy">On-Page SEO &amp; Security</span>
           </div>
           <p class="win-panel-text">Evaluates meta titles, descriptions, H1 hierarchy, robots.txt, sitemaps, JSON-LD schemas, and HTTP security headers.</p>
@@ -564,7 +577,7 @@
             </div>
           </div>
           <div class="app-actions">
-            <a href="https://github.com/zirharayane/SeoSonar" target="_blank" rel="noopener noreferrer" class="win-btn" style="width: 100%; height: 26px; font-size: 11px;">💻 View on GitHub</a>
+            <a href="https://github.com/zirharayane/SeoSonar" target="_blank" rel="noopener noreferrer" class="win-btn" style="width: 100%; height: 26px; font-size: 11px;">View on GitHub</a>
           </div>
         </div>
 
@@ -591,7 +604,7 @@
             </div>
           </div>
           <div class="app-actions">
-            <a href="https://porthole.rayane.top" target="_blank" rel="noopener noreferrer" class="win-btn" style="width: 100%; height: 26px; font-size: 11px;">🌐 porthole.rayane.top</a>
+            <a href="https://porthole.rayane.top" target="_blank" rel="noopener noreferrer" class="win-btn" style="width: 100%; height: 26px; font-size: 11px;">porthole.rayane.top</a>
           </div>
         </div>
 
@@ -986,19 +999,29 @@
       <div class="start-menu-items">
         <a href="#scanner-section" class="start-menu-item" role="menuitem">
           <img src="/assets/icon-32.webp" width="16" height="16" alt="">
-          <span>🔍 Scan URL</span>
+          <span>Scan URL</span>
         </a>
         <a href="#compare-section" class="start-menu-item" role="menuitem">
-          <span style="font-size: 13px; line-height: 1;" aria-hidden="true">⚖</span>
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="flex-shrink: 0;">
+            <rect x="2" y="2" width="5" height="12" fill="#000080"/>
+            <rect x="9" y="2" width="5" height="12" fill="#008080"/>
+          </svg>
           <span>Compare</span>
         </a>
         <a href="#history-section" class="start-menu-item" role="menuitem">
-          <span style="font-size: 13px; line-height: 1;" aria-hidden="true">📁</span>
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M1 3h5l2 2h7v9H1z" fill="#d4aa00"/>
+          </svg>
           <span>History</span>
         </a>
         <div class="start-menu-divider" role="separator"></div>
         <a href="#seo-guide" class="start-menu-item" role="menuitem">
-          <span style="font-size: 13px; line-height: 1;" aria-hidden="true">📖</span>
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="flex-shrink: 0;">
+            <rect x="2" y="2" width="12" height="12" fill="#ffffff" stroke="#000080"/>
+            <line x1="4" y1="5" x2="12" y2="5" stroke="#000080"/>
+            <line x1="4" y1="8" x2="12" y2="8" stroke="#000080"/>
+            <line x1="4" y1="11" x2="9" y2="11" stroke="#000080"/>
+          </svg>
           <span>Guide &amp; FAQ</span>
         </a>
       </div>
@@ -1020,7 +1043,7 @@
         <span>SeoSonar 98</span>
       </div>
 
-      <span class="footer-branding">Made by <strong>Rayane Zirha</strong> · <strong>RZ™</strong></span>
+      <span class="footer-branding">Made by <strong>Rayane Zirha (Zirha Rayane)</strong> · <strong>RZ™</strong></span>
     </div>
 
     <div class="footer-right-group">
@@ -1033,7 +1056,16 @@
       </div>
 
       <div class="system-tray">
-        <span title="Network Active" style="font-size: 11px;" aria-hidden="true">🖧</span>
+        <span title="Network Active" style="font-size: 11px;" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14" style="vertical-align: middle;">
+            <rect x="1" y="2" width="6" height="5" fill="#000080"/>
+            <rect x="9" y="2" width="6" height="5" fill="#008080"/>
+            <line x1="4" y1="7" x2="4" y2="11" stroke="#000"/>
+            <line x1="12" y1="7" x2="12" y2="11" stroke="#000"/>
+            <line x1="4" y1="11" x2="12" y2="11" stroke="#000"/>
+            <rect x="7" y="11" width="2" height="3" fill="#000"/>
+          </svg>
+        </span>
         <span id="footer-clock" class="footer-clock-box" style="box-shadow: none; padding: 0; background: transparent;" aria-label="Current time">12:00 PM</span>
       </div>
     </div>

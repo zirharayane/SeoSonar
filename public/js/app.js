@@ -231,8 +231,15 @@ export async function loadResultsEngine() {
   return resultsEngine;
 }
 
+export function normalizeUrl(url) {
+  const trimmed = (url || '').trim();
+  if (!trimmed) return '';
+  return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+}
+
 export async function executeScan(url, triggerBtn = null) {
-  if (!url) return;
+  const targetUrl = normalizeUrl(url);
+  if (!targetUrl) return;
 
   const defragSec = document.getElementById('defrag-section');
   if (defragSec) {
@@ -244,7 +251,7 @@ export async function executeScan(url, triggerBtn = null) {
   try {
     const [engine, response] = await Promise.all([
       loadResultsEngine(),
-      fetch(`/api/scan?url=${encodeURIComponent(url)}&bypass_rl=1`, {
+      fetch(`/api/scan?url=${encodeURIComponent(targetUrl)}&bypass_rl=1`, {
         method: 'GET',
         headers: { Accept: 'application/json' },
       }),
